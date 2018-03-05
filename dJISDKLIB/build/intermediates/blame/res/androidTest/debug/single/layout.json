@@ -1,10 +1,10 @@
 [
     {
-        "merged": "E:\\@STUDIES\\B-tech\\ThirdYear\\2ndSemester\\BTP\\Android-FPVDemo\\FPVDemo\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\log_dialog_view.xml",
-        "source": "E:\\@STUDIES\\B-tech\\ThirdYear\\2ndSemester\\BTP\\Android-FPVDemo\\FPVDemo\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\layout\\log_dialog_view.xml"
+        "merged": "E:\\@STUDIES\\B-tech\\ForthYear\\Mid\\FPVDemo\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\dialog_login.xml",
+        "source": "E:\\@STUDIES\\B-tech\\ForthYear\\Mid\\FPVDemo\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\layout\\dialog_login.xml"
     },
     {
-        "merged": "E:\\@STUDIES\\B-tech\\ThirdYear\\2ndSemester\\BTP\\Android-FPVDemo\\FPVDemo\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\dialog_login.xml",
-        "source": "E:\\@STUDIES\\B-tech\\ThirdYear\\2ndSemester\\BTP\\Android-FPVDemo\\FPVDemo\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\layout\\dialog_login.xml"
+        "merged": "E:\\@STUDIES\\B-tech\\ForthYear\\Mid\\FPVDemo\\dJISDKLIB\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\log_dialog_view.xml",
+        "source": "E:\\@STUDIES\\B-tech\\ForthYear\\Mid\\FPVDemo\\dJISDKLIB\\build\\intermediates\\bundles\\debug\\res\\layout\\log_dialog_view.xml"
     }
 ]

@@ -1,5 +1,6 @@
 ./obj/local/armeabi-v7a/objs/KCF/frame.o: jni/frame.cpp \
   C:/android-ndk-r14/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\iostream \
+  C:/android-ndk-r14/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\list \
   C:/android-ndk-r14/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm \
   C:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/opencv.hpp \
   C:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/core/core_c.h \
@@ -25,7 +26,6 @@
   C:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/video/video.hpp \
   C:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/video/tracking.hpp \
   C:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/video/background_segm.hpp \
-  C:/android-ndk-r14/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\list \
   C:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/features2d/features2d.hpp \
   C:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/objdetect/objdetect.hpp \
   C:/android-ndk-r14/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\deque \
@@ -42,6 +42,8 @@
   jni/kcftracker.hpp jni/tracker.h
 
 C:/android-ndk-r14/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\iostream:
+
+C:/android-ndk-r14/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\list:
 
 C:/android-ndk-r14/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm:
 
@@ -92,8 +94,6 @@ C:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/video/video.hpp:
 C:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/video/tracking.hpp:
 
 C:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/video/background_segm.hpp:
-
-C:/android-ndk-r14/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\list:
 
 C:/OpenCV-android-sdk/sdk/native/jni/include\opencv2/features2d/features2d.hpp:
 

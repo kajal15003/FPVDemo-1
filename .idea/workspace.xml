@@ -6,11 +6,120 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="CountMain" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="debug" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f6a40736-c43f-4c0e-88e4-dc7a521fbc9d" name="Default" comment="" />
+    <list default="true" id="b7bc1fa4-10ec-4145-a6e3-101fe6d6483a" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/Track.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/android_android_14.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/android_android_22.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/android_android_23.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/animated_vector_drawable_23_3_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/annotations_android_14.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/appcompat_v7_23_3_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/converter_gson_2_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/design_23_3_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/dji_eventbus.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/dji_gson.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/dji_sdk.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/gson_2_6_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/okhttp_3_2_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/okio_1_7_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/recyclerview_v7_23_3_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/retrofit_2_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/rxandroid_1_1_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/rxjava_1_1_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/rxjava_computation_expressions_0_21_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/smoothbluetooth_0_1_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/sqlbrite_0_6_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_annotations_23_3_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_v4_23_3_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/support_vector_drawable_23_3_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/libs/armeabi-v7a/libKCF.so" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_openCVLibrary2411_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_openCVLibrary2411_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_openCVLibrary2411_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_openCVLibrary2411_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_openCVLibrary2411_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_openCVLibrary2411_compileReleaseJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_openCVLibrary2411_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_openCVLibrary2411_compileReleaseJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/generated/mockable-android-14.jar" afterPath="$PROJECT_DIR$/build/generated/mockable-android-14.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/generated/mockable-android-22.jar" afterPath="$PROJECT_DIR$/build/generated/mockable-android-22.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/generated/mockable-android-23.jar" afterPath="$PROJECT_DIR$/build/generated/mockable-android-23.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/bundles/debug/classes.jar" afterPath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/bundles/debug/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/bundles/release/classes.jar" afterPath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/bundles/release/classes.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/res/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/res/resources-debug-androidTest.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/transforms/mergeJavaRes/debug/jars/2/3/main.jar" afterPath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/transforms/mergeJavaRes/debug/jars/2/3/main.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/transforms/mergeJavaRes/release/jars/2/3/main.jar" afterPath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/transforms/mergeJavaRes/release/jars/2/3/main.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dJISDKLIB/build/outputs/aar/dJISDKLIB-debug.aar" afterPath="$PROJECT_DIR$/dJISDKLIB/build/outputs/aar/dJISDKLIB-debug.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dJISDKLIB/build/outputs/aar/dJISDKLIB-release.aar" afterPath="$PROJECT_DIR$/dJISDKLIB/build/outputs/aar/dJISDKLIB-release.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/obj/local/armeabi-v7a/objs/KCF/fhog.o" afterPath="$PROJECT_DIR$/obj/local/armeabi-v7a/objs/KCF/fhog.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/obj/local/armeabi-v7a/objs/KCF/frame.o" afterPath="$PROJECT_DIR$/obj/local/armeabi-v7a/objs/KCF/frame.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/obj/local/armeabi-v7a/objs/KCF/kcftracker.o" afterPath="$PROJECT_DIR$/obj/local/armeabi-v7a/objs/KCF/kcftracker.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary2411/build/intermediates/incremental/compileDebugAidl/dependency.store" afterPath="$PROJECT_DIR$/openCVLibrary2411/build/intermediates/incremental/compileDebugAidl/dependency.store" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary2411/build/intermediates/incremental/compileReleaseAidl/dependency.store" afterPath="$PROJECT_DIR$/openCVLibrary2411/build/intermediates/incremental/compileReleaseAidl/dependency.store" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary2411/build/intermediates/res/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/openCVLibrary2411/build/intermediates/res/resources-debug-androidTest.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary2411/build/outputs/aar/openCVLibrary2411-debug.aar" afterPath="$PROJECT_DIR$/openCVLibrary2411/build/outputs/aar/openCVLibrary2411-debug.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary2411/build/outputs/aar/openCVLibrary2411-release.aar" afterPath="$PROJECT_DIR$/openCVLibrary2411/build/outputs/aar/openCVLibrary2411-release.aar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FPVDemo.iml" afterPath="$PROJECT_DIR$/FPVDemo.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/ConnectionActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/ConnectionActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/FPVDemoApplication.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/FPVDemoApplication.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/blame/res/androidTest/debug/multi/values-zh-rCN.json" afterPath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/blame/res/androidTest/debug/multi/values-zh-rCN.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/blame/res/androidTest/debug/multi/values.json" afterPath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/blame/res/androidTest/debug/multi/values.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/blame/res/androidTest/debug/single/anim.json" afterPath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/blame/res/androidTest/debug/single/anim.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/blame/res/androidTest/debug/single/drawable.json" afterPath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/blame/res/androidTest/debug/single/drawable.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/blame/res/androidTest/debug/single/layout.json" afterPath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/blame/res/androidTest/debug/single/layout.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/blame/res/androidTest/debug/single/raw.json" afterPath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/blame/res/androidTest/debug/single/raw.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/blame/res/androidTest/debug/single/xml.json" afterPath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/blame/res/androidTest/debug/single/xml.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/incremental/mergeDebugAndroidTestResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/incremental/mergeDebugAndroidTestResources/compile-file-map.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/incremental/mergeDebugAndroidTestResources/merger.xml" afterPath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/incremental/mergeDebugAndroidTestResources/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/incremental/mergeDebugAssets/merger.xml" afterPath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/incremental/mergeDebugAssets/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" afterPath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/incremental/mergeDebugShaders/merger.xml" afterPath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/incremental/mergeDebugShaders/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/incremental/mergeReleaseAssets/merger.xml" afterPath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/incremental/mergeReleaseAssets/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/incremental/mergeReleaseJniLibFolders/merger.xml" afterPath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/incremental/mergeReleaseJniLibFolders/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/incremental/mergeReleaseShaders/merger.xml" afterPath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/incremental/mergeReleaseShaders/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/incremental/packageDebugResources/merger.xml" afterPath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/incremental/packageDebugResources/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/incremental/packageReleaseResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/incremental/packageReleaseResources/compile-file-map.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/incremental/packageReleaseResources/merger.xml" afterPath="$PROJECT_DIR$/dJISDKLIB/build/intermediates/incremental/packageReleaseResources/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jni/Android.mk" afterPath="$PROJECT_DIR$/jni/Android.mk" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/jni/frame.cpp" afterPath="$PROJECT_DIR$/jni/frame.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/obj/local/armeabi-v7a/libKCF.so" afterPath="$PROJECT_DIR$/obj/local/armeabi-v7a/libKCF.so" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/obj/local/armeabi-v7a/objs/KCF/frame.o.d" afterPath="$PROJECT_DIR$/obj/local/armeabi-v7a/objs/KCF/frame.o.d" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary2411/build/generated/source/aidl/debug/org/opencv/engine/OpenCVEngineInterface.java" afterPath="$PROJECT_DIR$/openCVLibrary2411/build/generated/source/aidl/debug/org/opencv/engine/OpenCVEngineInterface.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary2411/build/generated/source/aidl/release/org/opencv/engine/OpenCVEngineInterface.java" afterPath="$PROJECT_DIR$/openCVLibrary2411/build/generated/source/aidl/release/org/opencv/engine/OpenCVEngineInterface.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary2411/build/intermediates/blame/res/androidTest/debug/multi/values.json" afterPath="$PROJECT_DIR$/openCVLibrary2411/build/intermediates/blame/res/androidTest/debug/multi/values.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary2411/build/intermediates/incremental/mergeDebugAndroidTestResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/openCVLibrary2411/build/intermediates/incremental/mergeDebugAndroidTestResources/compile-file-map.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary2411/build/intermediates/incremental/mergeDebugAndroidTestResources/merger.xml" afterPath="$PROJECT_DIR$/openCVLibrary2411/build/intermediates/incremental/mergeDebugAndroidTestResources/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary2411/build/intermediates/incremental/mergeDebugAssets/merger.xml" afterPath="$PROJECT_DIR$/openCVLibrary2411/build/intermediates/incremental/mergeDebugAssets/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary2411/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" afterPath="$PROJECT_DIR$/openCVLibrary2411/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary2411/build/intermediates/incremental/mergeDebugShaders/merger.xml" afterPath="$PROJECT_DIR$/openCVLibrary2411/build/intermediates/incremental/mergeDebugShaders/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary2411/build/intermediates/incremental/mergeReleaseAssets/merger.xml" afterPath="$PROJECT_DIR$/openCVLibrary2411/build/intermediates/incremental/mergeReleaseAssets/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary2411/build/intermediates/incremental/mergeReleaseJniLibFolders/merger.xml" afterPath="$PROJECT_DIR$/openCVLibrary2411/build/intermediates/incremental/mergeReleaseJniLibFolders/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary2411/build/intermediates/incremental/mergeReleaseShaders/merger.xml" afterPath="$PROJECT_DIR$/openCVLibrary2411/build/intermediates/incremental/mergeReleaseShaders/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary2411/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/openCVLibrary2411/build/intermediates/incremental/packageDebugResources/compile-file-map.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary2411/build/intermediates/incremental/packageDebugResources/merger.xml" afterPath="$PROJECT_DIR$/openCVLibrary2411/build/intermediates/incremental/packageDebugResources/merger.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary2411/build/intermediates/incremental/packageReleaseResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/openCVLibrary2411/build/intermediates/incremental/packageReleaseResources/compile-file-map.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary2411/build/intermediates/incremental/packageReleaseResources/merger.xml" afterPath="$PROJECT_DIR$/openCVLibrary2411/build/intermediates/incremental/packageReleaseResources/merger.xml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/src/main/jniLibs/armeabi-v7a/libKCF.so" afterPath="$PROJECT_DIR$/app/src/main/jniLibs/armeabi/libKCF.so" />
+    </list>
     <ignored path="FPVDemo.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,44 +151,106 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="647" column="45" selection-start-line="647" selection-start-column="45" selection-end-line="647" selection-end-column="45" />
+            <state relative-caret-position="430">
+              <caret line="738" column="1" selection-start-line="51" selection-start-column="26" selection-end-line="738" selection-end-column="1" />
+              <folding>
+                <element signature="e#4787#5164#0" expanded="true" />
+                <element signature="e#5163#5164#0" expanded="true" />
+                <element signature="e#5572#5573#0" expanded="true" />
+                <element signature="e#5603#5604#0" expanded="true" />
+                <element signature="e#11002#12734#0" expanded="true" />
+                <element signature="e#12733#12734#0" expanded="true" />
+                <element signature="e#12736#12934#0" expanded="true" />
+                <element signature="e#12933#12934#0" expanded="true" />
+                <element signature="e#21087#22109#0" expanded="true" />
+                <element signature="e#22108#22109#0" expanded="true" />
+                <element signature="e#22111#22534#0" expanded="true" />
+                <element signature="e#22533#22534#0" expanded="true" />
+                <element signature="e#25159#25676#0" expanded="true" />
+                <element signature="e#25675#25676#0" expanded="true" />
+                <element signature="e#26024#26422#0" expanded="true" />
+                <element signature="e#26421#26422#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Track.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/Track.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="739">
+              <caret line="553" column="23" selection-start-line="553" selection-start-column="23" selection-end-line="553" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#13521#13887#0" expanded="true" />
-                <element signature="e#13886#13887#0" expanded="true" />
-                <element signature="e#14047#15169#0" expanded="true" />
-                <element signature="e#15168#15169#0" expanded="true" />
-                <element signature="class#25921:28067" expanded="false" />
-                <element signature="method#switchCameraMode#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#28295#28675#0" expanded="true" />
-                <element signature="e#28674#28675#0" expanded="true" />
-                <element signature="method#startRecord#0;class#MainActivity#0" expanded="false" />
-                <element signature="method#startRecord#0;class#MainActivity#0" expanded="false" />
-                <element signature="e#29884#30272#0" expanded="true" />
-                <element signature="e#30271#30272#0" expanded="true" />
-                <element signature="e#30524#30912#0" expanded="true" />
-                <element signature="e#30911#30912#0" expanded="true" />
-                <marker date="1502449939619" expanded="false" signature="4708:12549" ph="{...}" />
-                <marker date="1502449939619" expanded="false" signature="4917:4936" ph=" { " />
-                <marker date="1502449939619" expanded="false" signature="4949:4963" ph=" }" />
-                <marker date="1502449939619" expanded="false" signature="5030:5049" ph=" { " />
-                <marker date="1502449939619" expanded="false" signature="5062:5076" ph=" }" />
-                <marker date="1502449939619" expanded="false" signature="7366:7385" ph=" { " />
-                <marker date="1502449939619" expanded="false" signature="7398:7412" ph=" }" />
-                <marker date="1502449939619" expanded="false" signature="8346:8365" ph=" { " />
-                <marker date="1502449939619" expanded="false" signature="8377:8391" ph=" }" />
-                <marker date="1502449939619" expanded="false" signature="10360:10379" ph=" { " />
-                <marker date="1502449939619" expanded="false" signature="10388:10402" ph=" }" />
+                <element signature="e#4594#4969#0" expanded="true" />
+                <element signature="e#4968#4969#0" expanded="true" />
+                <element signature="e#5374#5375#0" expanded="true" />
+                <element signature="e#5405#5406#0" expanded="true" />
+                <element signature="e#9229#9555#0" expanded="true" />
+                <element signature="e#9554#9555#0" expanded="true" />
+                <element signature="e#9739#9771#0" expanded="true" />
+                <element signature="e#13299#15031#0" expanded="true" />
+                <element signature="e#15030#15031#0" expanded="true" />
+                <element signature="e#15033#15231#0" expanded="true" />
+                <element signature="e#15230#15231#0" expanded="true" />
+                <element signature="e#17839#19044#0" expanded="true" />
+                <element signature="e#19043#19044#0" expanded="true" />
+                <element signature="e#20533#20681#0" expanded="true" />
+                <element signature="e#20680#20681#0" expanded="true" />
+                <element signature="e#21031#21428#0" expanded="true" />
+                <element signature="e#21427#21428#0" expanded="true" />
+                <element signature="e#21978#22376#0" expanded="true" />
+                <element signature="e#22375#22376#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CheckFrames.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/CheckFrames.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="60" column="50" selection-start-line="60" selection-start-column="50" selection-end-line="60" selection-end-column="50" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#4763#5140#0" expanded="true" />
+                <element signature="e#5139#5140#0" expanded="true" />
+                <element signature="e#5548#5549#0" expanded="true" />
+                <element signature="e#5579#5580#0" expanded="true" />
+                <element signature="e#7708#8034#0" expanded="true" />
+                <element signature="e#8033#8034#0" expanded="true" />
+                <element signature="e#8218#8250#0" expanded="true" />
+                <element signature="e#10980#12712#0" expanded="true" />
+                <element signature="e#12711#12712#0" expanded="true" />
+                <element signature="e#12714#12912#0" expanded="true" />
+                <element signature="e#12911#12912#0" expanded="true" />
+                <element signature="e#21064#22086#0" expanded="true" />
+                <element signature="e#22085#22086#0" expanded="true" />
+                <element signature="e#22088#22511#0" expanded="true" />
+                <element signature="e#22510#22511#0" expanded="true" />
+                <element signature="e#25135#25652#0" expanded="true" />
+                <element signature="e#25651#25652#0" expanded="true" />
+                <element signature="e#26000#26398#0" expanded="true" />
+                <element signature="e#26397#26398#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="ASClass" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
     <option name="availableProjects">
@@ -131,6 +302,11 @@
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="packageReleaseResources" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.android.volley:volley:1.0.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareComAndroidVolleyVolley100Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
@@ -857,6 +1033,11 @@
                 <option name="description" value="Displays the sub-projects of project ':app'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
                 <option name="name" value="projects" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare com.android.volley:volley:1.0.0" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="prepareComAndroidVolleyVolley100Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
@@ -2749,7 +2930,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo" value="7460450421441" />
+        <entry key="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo" value="7478139822778" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -3247,19 +3428,19 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/jni/frame.cpp" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/LostActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/ConnectionActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/MainActivityCopy.txt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/Track.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/CheckFrames.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="-7" />
+    <option name="width" value="1370" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -3268,7 +3449,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="1" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
@@ -3286,11 +3467,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView">
-        <subPane />
-      </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -3319,56 +3497,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="jni" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FPVDemo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FPVDemo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dJISDKLIB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FPVDemo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FPVDemo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dJISDKLIB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FPVDemo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FPVDemo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -3392,62 +3520,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FPVDemo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FPVDemo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FPVDemo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="FPVDemo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="layout" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -3501,21 +3573,17 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView">
+        <subPane />
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../Midway3/Extra/FPVDemo" />
-    <property name="device.picker.selection" value="5203c6f7b86943a9" />
-    <property name="UI_DESIGNER_EDITOR_MODE.NlPaletteManager-NlPreviewForm.SHOW" value="false" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\src\main\jniLibs" />
-    </key>
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../ThirdYear/2ndSemester/BTP/Android-FPVDemo/FPVDemo" />
   </component>
   <component name="RunManager" selected="Android App.app">
     <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
@@ -3747,7 +3815,7 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="false" name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+    <configuration default="false" name="app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="app" />
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
@@ -3816,48 +3884,48 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f6a40736-c43f-4c0e-88e4-dc7a521fbc9d" name="Default" comment="" />
-      <created>1493777005911</created>
+      <changelist id="b7bc1fa4-10ec-4145-a6e3-101fe6d6483a" name="Default" comment="" />
+      <created>1519698404433</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1493777005911</updated>
+      <updated>1519698404433</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <frame x="-7" y="0" width="1370" height="735" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41247833" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32764506" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928944" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32829046" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24659607" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24961832" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="92" y="92" width="1182" height="544" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -3873,10 +3941,14 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Addons" />
+    <option name="LAST_COMMIT_MESSAGE" value="Addons" />
+  </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <option name="time" value="5" />
-    </breakpoint-manager>
+    <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -3885,91 +3957,46 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#13521#13887#0" expanded="true" />
-            <element signature="e#13886#13887#0" expanded="true" />
-            <element signature="e#14047#15169#0" expanded="true" />
-            <element signature="e#15168#15169#0" expanded="true" />
-            <element signature="class#25921:28067" expanded="false" />
-            <element signature="method#switchCameraMode#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#28295#28675#0" expanded="true" />
-            <element signature="e#28674#28675#0" expanded="true" />
-            <element signature="method#startRecord#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#startRecord#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#29884#30272#0" expanded="true" />
-            <element signature="e#30271#30272#0" expanded="true" />
-            <element signature="e#30524#30912#0" expanded="true" />
-            <element signature="e#30911#30912#0" expanded="true" />
-            <marker date="1502449939619" expanded="false" signature="4708:12549" ph="{...}" />
-            <marker date="1502449939619" expanded="false" signature="4917:4936" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="4949:4963" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="5030:5049" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="5062:5076" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="7366:7385" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="7398:7412" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="8346:8365" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="8377:8391" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="10360:10379" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="10388:10402" ph=" }" />
+            <element signature="e#4787#5164#0" expanded="true" />
+            <element signature="e#5163#5164#0" expanded="true" />
+            <element signature="e#5572#5573#0" expanded="true" />
+            <element signature="e#5603#5604#0" expanded="true" />
+            <element signature="e#11002#12734#0" expanded="true" />
+            <element signature="e#12733#12734#0" expanded="true" />
+            <element signature="e#12736#12934#0" expanded="true" />
+            <element signature="e#12933#12934#0" expanded="true" />
+            <element signature="e#21087#22109#0" expanded="true" />
+            <element signature="e#22108#22109#0" expanded="true" />
+            <element signature="e#22111#22534#0" expanded="true" />
+            <element signature="e#22533#22534#0" expanded="true" />
+            <element signature="e#25159#25676#0" expanded="true" />
+            <element signature="e#25675#25676#0" expanded="true" />
+            <element signature="e#26024#26422#0" expanded="true" />
+            <element signature="e#26421#26422#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jni/frame.cpp">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.volley/volley/1.0.0/c79696d64f9520675054e27b77f490c17d8b4b9e/volley-1.0.0-sources.jar!/com/android/volley/DefaultRetryPolicy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="44" column="12" selection-start-line="44" selection-start-column="12" selection-end-line="44" selection-end-column="12" />
+        <state relative-caret-position="714">
+          <caret line="56" column="11" selection-start-line="56" selection-start-column="11" selection-end-line="56" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/dJISDKLIB/libs/dji-sdk.jar!/dji/common/flightcontroller/DJIVirtualStickFlightControlData.class">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/ConnectionActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="45" column="43" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="43" />
+        <state relative-caret-position="1904">
+          <caret line="129" column="13" selection-start-line="129" selection-start-column="13" selection-end-line="129" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/LostActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5236">
-          <caret line="621" column="45" selection-start-line="621" selection-start-column="45" selection-end-line="621" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#13521#13887#0" expanded="true" />
-            <element signature="e#13886#13887#0" expanded="true" />
-            <element signature="e#14047#15169#0" expanded="true" />
-            <element signature="e#15168#15169#0" expanded="true" />
-            <element signature="class#25921:28067" expanded="false" />
-            <element signature="method#switchCameraMode#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#28295#28675#0" expanded="true" />
-            <element signature="e#28674#28675#0" expanded="true" />
-            <element signature="method#startRecord#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#startRecord#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#29884#30272#0" expanded="true" />
-            <element signature="e#30271#30272#0" expanded="true" />
-            <element signature="e#30524#30912#0" expanded="true" />
-            <element signature="e#30911#30912#0" expanded="true" />
-            <marker date="1502449939619" expanded="false" signature="4708:12549" ph="{...}" />
-            <marker date="1502449939619" expanded="false" signature="4917:4936" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="4949:4963" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="5030:5049" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="5062:5076" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="7366:7385" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="7398:7412" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="8346:8365" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="8377:8391" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="10360:10379" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="10388:10402" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jni/frame.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="15011">
+          <caret line="936" column="27" selection-start-line="936" selection-start-column="27" selection-end-line="936" selection-end-column="27" />
           <folding />
         </state>
       </provider>
@@ -3979,33 +4006,39 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#13521#13887#0" expanded="true" />
-            <element signature="e#13886#13887#0" expanded="true" />
-            <element signature="e#14047#15169#0" expanded="true" />
-            <element signature="e#15168#15169#0" expanded="true" />
-            <element signature="class#25921:28067" expanded="false" />
-            <element signature="method#switchCameraMode#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#28295#28675#0" expanded="true" />
-            <element signature="e#28674#28675#0" expanded="true" />
-            <element signature="method#startRecord#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#startRecord#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#29884#30272#0" expanded="true" />
-            <element signature="e#30271#30272#0" expanded="true" />
-            <element signature="e#30524#30912#0" expanded="true" />
-            <element signature="e#30911#30912#0" expanded="true" />
-            <marker date="1502449939619" expanded="false" signature="4708:12549" ph="{...}" />
-            <marker date="1502449939619" expanded="false" signature="4917:4936" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="4949:4963" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="5030:5049" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="5062:5076" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="7366:7385" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="7398:7412" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="8346:8365" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="8377:8391" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="10360:10379" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="10388:10402" ph=" }" />
+            <element signature="e#4787#5164#0" expanded="true" />
+            <element signature="e#5163#5164#0" expanded="true" />
+            <element signature="e#5572#5573#0" expanded="true" />
+            <element signature="e#5603#5604#0" expanded="true" />
+            <element signature="e#11002#12734#0" expanded="true" />
+            <element signature="e#12733#12734#0" expanded="true" />
+            <element signature="e#12736#12934#0" expanded="true" />
+            <element signature="e#12933#12934#0" expanded="true" />
+            <element signature="e#21087#22109#0" expanded="true" />
+            <element signature="e#22108#22109#0" expanded="true" />
+            <element signature="e#22111#22534#0" expanded="true" />
+            <element signature="e#22533#22534#0" expanded="true" />
+            <element signature="e#25159#25676#0" expanded="true" />
+            <element signature="e#25675#25676#0" expanded="true" />
+            <element signature="e#26024#26422#0" expanded="true" />
+            <element signature="e#26421#26422#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/ConnectionActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1904">
+          <caret line="129" column="13" selection-start-line="129" selection-start-column="13" selection-end-line="129" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/LostActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15011">
+          <caret line="936" column="27" selection-start-line="936" selection-start-column="27" selection-end-line="936" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -4014,501 +4047,164 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#13521#13887#0" expanded="true" />
-            <element signature="e#13886#13887#0" expanded="true" />
-            <element signature="e#14047#15169#0" expanded="true" />
-            <element signature="e#15168#15169#0" expanded="true" />
-            <element signature="class#25921:28067" expanded="false" />
-            <element signature="method#switchCameraMode#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#28295#28675#0" expanded="true" />
-            <element signature="e#28674#28675#0" expanded="true" />
-            <element signature="method#startRecord#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#startRecord#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#29884#30272#0" expanded="true" />
-            <element signature="e#30271#30272#0" expanded="true" />
-            <element signature="e#30524#30912#0" expanded="true" />
-            <element signature="e#30911#30912#0" expanded="true" />
-            <marker date="1502449939619" expanded="false" signature="4708:12549" ph="{...}" />
-            <marker date="1502449939619" expanded="false" signature="4917:4936" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="4949:4963" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="5030:5049" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="5062:5076" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="7366:7385" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="7398:7412" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="8346:8365" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="8377:8391" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="10360:10379" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="10388:10402" ph=" }" />
+            <element signature="e#4787#5164#0" expanded="true" />
+            <element signature="e#5163#5164#0" expanded="true" />
+            <element signature="e#5572#5573#0" expanded="true" />
+            <element signature="e#5603#5604#0" expanded="true" />
+            <element signature="e#11002#12734#0" expanded="true" />
+            <element signature="e#12733#12734#0" expanded="true" />
+            <element signature="e#12736#12934#0" expanded="true" />
+            <element signature="e#12933#12934#0" expanded="true" />
+            <element signature="e#21087#22109#0" expanded="true" />
+            <element signature="e#22108#22109#0" expanded="true" />
+            <element signature="e#22111#22534#0" expanded="true" />
+            <element signature="e#22533#22534#0" expanded="true" />
+            <element signature="e#25159#25676#0" expanded="true" />
+            <element signature="e#25675#25676#0" expanded="true" />
+            <element signature="e#26024#26422#0" expanded="true" />
+            <element signature="e#26421#26422#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/ConnectionActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#13521#13887#0" expanded="true" />
-            <element signature="e#13886#13887#0" expanded="true" />
-            <element signature="e#14047#15169#0" expanded="true" />
-            <element signature="e#15168#15169#0" expanded="true" />
-            <element signature="class#25921:28067" expanded="false" />
-            <element signature="method#switchCameraMode#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#28295#28675#0" expanded="true" />
-            <element signature="e#28674#28675#0" expanded="true" />
-            <element signature="method#startRecord#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#startRecord#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#29884#30272#0" expanded="true" />
-            <element signature="e#30271#30272#0" expanded="true" />
-            <element signature="e#30524#30912#0" expanded="true" />
-            <element signature="e#30911#30912#0" expanded="true" />
-            <marker date="1502449939619" expanded="false" signature="4708:12549" ph="{...}" />
-            <marker date="1502449939619" expanded="false" signature="4917:4936" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="4949:4963" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="5030:5049" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="5062:5076" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="7366:7385" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="7398:7412" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="8346:8365" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="8377:8391" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="10360:10379" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="10388:10402" ph=" }" />
-          </folding>
+        <state relative-caret-position="1904">
+          <caret line="129" column="13" selection-start-line="129" selection-start-column="13" selection-end-line="129" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/LostActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#13521#13887#0" expanded="true" />
-            <element signature="e#13886#13887#0" expanded="true" />
-            <element signature="e#14047#15169#0" expanded="true" />
-            <element signature="e#15168#15169#0" expanded="true" />
-            <element signature="class#25921:28067" expanded="false" />
-            <element signature="method#switchCameraMode#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#28295#28675#0" expanded="true" />
-            <element signature="e#28674#28675#0" expanded="true" />
-            <element signature="method#startRecord#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#startRecord#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#29884#30272#0" expanded="true" />
-            <element signature="e#30271#30272#0" expanded="true" />
-            <element signature="e#30524#30912#0" expanded="true" />
-            <element signature="e#30911#30912#0" expanded="true" />
-            <marker date="1502449939619" expanded="false" signature="4708:12549" ph="{...}" />
-            <marker date="1502449939619" expanded="false" signature="4917:4936" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="4949:4963" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="5030:5049" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="5062:5076" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="7366:7385" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="7398:7412" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="8346:8365" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="8377:8391" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="10360:10379" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="10388:10402" ph=" }" />
-          </folding>
+        <state relative-caret-position="15011">
+          <caret line="936" column="27" selection-start-line="936" selection-start-column="27" selection-end-line="936" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/MainActivity.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.volley/volley/1.0.0/c79696d64f9520675054e27b77f490c17d8b4b9e/volley-1.0.0-sources.jar!/com/android/volley/DefaultRetryPolicy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#13521#13887#0" expanded="true" />
-            <element signature="e#13886#13887#0" expanded="true" />
-            <element signature="e#14047#15169#0" expanded="true" />
-            <element signature="e#15168#15169#0" expanded="true" />
-            <element signature="class#25921:28067" expanded="false" />
-            <element signature="method#switchCameraMode#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#28295#28675#0" expanded="true" />
-            <element signature="e#28674#28675#0" expanded="true" />
-            <element signature="method#startRecord#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#startRecord#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#29884#30272#0" expanded="true" />
-            <element signature="e#30271#30272#0" expanded="true" />
-            <element signature="e#30524#30912#0" expanded="true" />
-            <element signature="e#30911#30912#0" expanded="true" />
-            <marker date="1502449939619" expanded="false" signature="4708:12549" ph="{...}" />
-            <marker date="1502449939619" expanded="false" signature="4917:4936" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="4949:4963" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="5030:5049" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="5062:5076" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="7366:7385" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="7398:7412" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="8346:8365" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="8377:8391" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="10360:10379" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="10388:10402" ph=" }" />
-          </folding>
+        <state relative-caret-position="714">
+          <caret line="56" column="11" selection-start-line="56" selection-start-column="11" selection-end-line="56" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/LostActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#13521#13887#0" expanded="true" />
-            <element signature="e#13886#13887#0" expanded="true" />
-            <element signature="e#14047#15169#0" expanded="true" />
-            <element signature="e#15168#15169#0" expanded="true" />
-            <element signature="class#25921:28067" expanded="false" />
-            <element signature="method#switchCameraMode#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#28295#28675#0" expanded="true" />
-            <element signature="e#28674#28675#0" expanded="true" />
-            <element signature="method#startRecord#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#startRecord#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#29884#30272#0" expanded="true" />
-            <element signature="e#30271#30272#0" expanded="true" />
-            <element signature="e#30524#30912#0" expanded="true" />
-            <element signature="e#30911#30912#0" expanded="true" />
-            <marker date="1502449939619" expanded="false" signature="4708:12549" ph="{...}" />
-            <marker date="1502449939619" expanded="false" signature="4917:4936" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="4949:4963" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="5030:5049" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="5062:5076" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="7366:7385" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="7398:7412" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="8346:8365" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="8377:8391" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="10360:10379" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="10388:10402" ph=" }" />
-          </folding>
+        <state relative-caret-position="515">
+          <caret line="936" column="27" selection-start-line="936" selection-start-column="27" selection-end-line="936" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/ConnectionActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#13521#13887#0" expanded="true" />
-            <element signature="e#13886#13887#0" expanded="true" />
-            <element signature="e#14047#15169#0" expanded="true" />
-            <element signature="e#15168#15169#0" expanded="true" />
-            <element signature="class#25921:28067" expanded="false" />
-            <element signature="method#switchCameraMode#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#28295#28675#0" expanded="true" />
-            <element signature="e#28674#28675#0" expanded="true" />
-            <element signature="method#startRecord#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#startRecord#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#29884#30272#0" expanded="true" />
-            <element signature="e#30271#30272#0" expanded="true" />
-            <element signature="e#30524#30912#0" expanded="true" />
-            <element signature="e#30911#30912#0" expanded="true" />
-            <marker date="1502449939619" expanded="false" signature="4708:12549" ph="{...}" />
-            <marker date="1502449939619" expanded="false" signature="4917:4936" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="4949:4963" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="5030:5049" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="5062:5076" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="7366:7385" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="7398:7412" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="8346:8365" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="8377:8391" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="10360:10379" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="10388:10402" ph=" }" />
-          </folding>
+        <state relative-caret-position="515">
+          <caret line="129" column="13" selection-start-line="129" selection-start-column="13" selection-end-line="129" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/MainActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/MainActivityCopy.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#13521#13887#0" expanded="true" />
-            <element signature="e#13886#13887#0" expanded="true" />
-            <element signature="e#14047#15169#0" expanded="true" />
-            <element signature="e#15168#15169#0" expanded="true" />
-            <element signature="class#25921:28067" expanded="false" />
-            <element signature="method#switchCameraMode#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#28295#28675#0" expanded="true" />
-            <element signature="e#28674#28675#0" expanded="true" />
-            <element signature="method#startRecord#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#startRecord#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#29884#30272#0" expanded="true" />
-            <element signature="e#30271#30272#0" expanded="true" />
-            <element signature="e#30524#30912#0" expanded="true" />
-            <element signature="e#30911#30912#0" expanded="true" />
-            <marker date="1502449939619" expanded="false" signature="4708:12549" ph="{...}" />
-            <marker date="1502449939619" expanded="false" signature="4917:4936" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="4949:4963" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="5030:5049" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="5062:5076" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="7366:7385" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="7398:7412" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="8346:8365" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="8377:8391" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="10360:10379" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="10388:10402" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#13521#13887#0" expanded="true" />
-            <element signature="e#13886#13887#0" expanded="true" />
-            <element signature="e#14047#15169#0" expanded="true" />
-            <element signature="e#15168#15169#0" expanded="true" />
-            <element signature="class#25921:28067" expanded="false" />
-            <element signature="method#switchCameraMode#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#28295#28675#0" expanded="true" />
-            <element signature="e#28674#28675#0" expanded="true" />
-            <element signature="method#startRecord#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#startRecord#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#29884#30272#0" expanded="true" />
-            <element signature="e#30271#30272#0" expanded="true" />
-            <element signature="e#30524#30912#0" expanded="true" />
-            <element signature="e#30911#30912#0" expanded="true" />
-            <marker date="1502449939619" expanded="false" signature="4708:12549" ph="{...}" />
-            <marker date="1502449939619" expanded="false" signature="4917:4936" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="4949:4963" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="5030:5049" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="5062:5076" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="7366:7385" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="7398:7412" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="8346:8365" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="8377:8391" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="10360:10379" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="10388:10402" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11373">
-          <caret line="737" column="37" selection-start-line="737" selection-start-column="37" selection-end-line="737" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#13521#13887#0" expanded="true" />
-            <element signature="e#13886#13887#0" expanded="true" />
-            <element signature="e#14047#15169#0" expanded="true" />
-            <element signature="e#15168#15169#0" expanded="true" />
-            <element signature="class#25921:28067" expanded="false" />
-            <element signature="method#switchCameraMode#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#28295#28675#0" expanded="true" />
-            <element signature="e#28674#28675#0" expanded="true" />
-            <element signature="method#startRecord#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#startRecord#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#29884#30272#0" expanded="true" />
-            <element signature="e#30271#30272#0" expanded="true" />
-            <element signature="e#30524#30912#0" expanded="true" />
-            <element signature="e#30911#30912#0" expanded="true" />
-            <marker date="1502449939619" expanded="false" signature="4708:12549" ph="{...}" />
-            <marker date="1502449939619" expanded="false" signature="4917:4936" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="4949:4963" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="5030:5049" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="5062:5076" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="7366:7385" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="7398:7412" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="8346:8365" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="8377:8391" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="10360:10379" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="10388:10402" ph=" }" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jni/frame.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/FPVDemoApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-23/java/io/InputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="175" column="15" selection-start-line="175" selection-start-column="15" selection-end-line="175" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jni/recttools.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openCVLibrary2411/src/main/java/org/opencv/objdetect/HOGDescriptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="157" column="17" selection-start-line="157" selection-start-column="17" selection-end-line="157" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/jniLibs/armeabi-v7a/libKCF.so">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jni/kcftracker.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jni/fhog.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="515">
+          <caret line="739" column="0" selection-start-line="739" selection-start-column="0" selection-end-line="739" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-68">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
       <provider editor-type-id="android-manifest">
         <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dJISDKLIB/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dJISDKLIB/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jni/frame.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="44" column="12" selection-start-line="44" selection-start-column="12" selection-end-line="44" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.palaima/smoothbluetooth/0.1.0/90e288a9414c37da13482380947e7200353ed322/smoothbluetooth-0.1.0-sources.jar!/io/palaima/smoothbluetooth/SmoothBluetooth.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="338" column="33" selection-start-line="338" selection-start-column="33" selection-end-line="338" selection-end-column="33" />
-          <folding>
-            <element signature="e#10272#10273#0" expanded="false" />
-            <element signature="e#10305#10306#0" expanded="false" />
-            <element signature="e#10342#10343#0" expanded="false" />
-            <element signature="e#10375#10376#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-23/android/util/Log.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/dJISDKLIB/libs/dji-sdk.jar!/dji/common/flightcontroller/DJIVirtualStickFlightControlData.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="45" column="11" selection-start-line="45" selection-start-column="11" selection-end-line="45" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="79" column="20" selection-start-line="79" selection-start-column="20" selection-end-line="79" selection-end-column="20" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="647" column="45" selection-start-line="647" selection-start-column="45" selection-end-line="647" selection-end-column="45" />
+        <state relative-caret-position="430">
+          <caret line="738" column="1" selection-start-line="51" selection-start-column="26" selection-end-line="738" selection-end-column="1" />
+          <folding>
+            <element signature="e#4787#5164#0" expanded="true" />
+            <element signature="e#5163#5164#0" expanded="true" />
+            <element signature="e#5572#5573#0" expanded="true" />
+            <element signature="e#5603#5604#0" expanded="true" />
+            <element signature="e#11002#12734#0" expanded="true" />
+            <element signature="e#12733#12734#0" expanded="true" />
+            <element signature="e#12736#12934#0" expanded="true" />
+            <element signature="e#12933#12934#0" expanded="true" />
+            <element signature="e#21087#22109#0" expanded="true" />
+            <element signature="e#22108#22109#0" expanded="true" />
+            <element signature="e#22111#22534#0" expanded="true" />
+            <element signature="e#22533#22534#0" expanded="true" />
+            <element signature="e#25159#25676#0" expanded="true" />
+            <element signature="e#25675#25676#0" expanded="true" />
+            <element signature="e#26024#26422#0" expanded="true" />
+            <element signature="e#26421#26422#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/Track.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="739">
+          <caret line="553" column="23" selection-start-line="553" selection-start-column="23" selection-end-line="553" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#13521#13887#0" expanded="true" />
-            <element signature="e#13886#13887#0" expanded="true" />
-            <element signature="e#14047#15169#0" expanded="true" />
-            <element signature="e#15168#15169#0" expanded="true" />
-            <element signature="class#25921:28067" expanded="false" />
-            <element signature="method#switchCameraMode#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#28295#28675#0" expanded="true" />
-            <element signature="e#28674#28675#0" expanded="true" />
-            <element signature="method#startRecord#0;class#MainActivity#0" expanded="false" />
-            <element signature="method#startRecord#0;class#MainActivity#0" expanded="false" />
-            <element signature="e#29884#30272#0" expanded="true" />
-            <element signature="e#30271#30272#0" expanded="true" />
-            <element signature="e#30524#30912#0" expanded="true" />
-            <element signature="e#30911#30912#0" expanded="true" />
-            <marker date="1502449939619" expanded="false" signature="4708:12549" ph="{...}" />
-            <marker date="1502449939619" expanded="false" signature="4917:4936" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="4949:4963" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="5030:5049" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="5062:5076" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="7366:7385" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="7398:7412" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="8346:8365" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="8377:8391" ph=" }" />
-            <marker date="1502449939619" expanded="false" signature="10360:10379" ph=" { " />
-            <marker date="1502449939619" expanded="false" signature="10388:10402" ph=" }" />
+            <element signature="e#4594#4969#0" expanded="true" />
+            <element signature="e#4968#4969#0" expanded="true" />
+            <element signature="e#5374#5375#0" expanded="true" />
+            <element signature="e#5405#5406#0" expanded="true" />
+            <element signature="e#9229#9555#0" expanded="true" />
+            <element signature="e#9554#9555#0" expanded="true" />
+            <element signature="e#9739#9771#0" expanded="true" />
+            <element signature="e#13299#15031#0" expanded="true" />
+            <element signature="e#15030#15031#0" expanded="true" />
+            <element signature="e#15033#15231#0" expanded="true" />
+            <element signature="e#15230#15231#0" expanded="true" />
+            <element signature="e#17839#19044#0" expanded="true" />
+            <element signature="e#19043#19044#0" expanded="true" />
+            <element signature="e#20533#20681#0" expanded="true" />
+            <element signature="e#20680#20681#0" expanded="true" />
+            <element signature="e#21031#21428#0" expanded="true" />
+            <element signature="e#21427#21428#0" expanded="true" />
+            <element signature="e#21978#22376#0" expanded="true" />
+            <element signature="e#22375#22376#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/dji/FPVDemo/CheckFrames.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="60" column="50" selection-start-line="60" selection-start-column="50" selection-end-line="60" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4763#5140#0" expanded="true" />
+            <element signature="e#5139#5140#0" expanded="true" />
+            <element signature="e#5548#5549#0" expanded="true" />
+            <element signature="e#5579#5580#0" expanded="true" />
+            <element signature="e#7708#8034#0" expanded="true" />
+            <element signature="e#8033#8034#0" expanded="true" />
+            <element signature="e#8218#8250#0" expanded="true" />
+            <element signature="e#10980#12712#0" expanded="true" />
+            <element signature="e#12711#12712#0" expanded="true" />
+            <element signature="e#12714#12912#0" expanded="true" />
+            <element signature="e#12911#12912#0" expanded="true" />
+            <element signature="e#21064#22086#0" expanded="true" />
+            <element signature="e#22085#22086#0" expanded="true" />
+            <element signature="e#22088#22511#0" expanded="true" />
+            <element signature="e#22510#22511#0" expanded="true" />
+            <element signature="e#25135#25652#0" expanded="true" />
+            <element signature="e#25651#25652#0" expanded="true" />
+            <element signature="e#26000#26398#0" expanded="true" />
+            <element signature="e#26397#26398#0" expanded="true" />
           </folding>
         </state>
       </provider>

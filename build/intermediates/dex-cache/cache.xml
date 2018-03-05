@@ -3,174 +3,174 @@
 
     <item
         is-multidex="false"
-        jar="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\exploded-aar\FPVDemo\dJISDKLIB\unspecified\jars\libs\rxjava-computation-expressions-0.21.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="1998e4f447fbf0194f39a12f3010d1f4f598667f">
-        <dex dex="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\pre-dexed\debug\rxjava-computation-expressions-0.21.1_114ae134955d77e9f5bf70960bfed2c89d260dcd.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\exploded-aar\FPVDemo\dJISDKLIB\unspecified\jars\libs\retrofit-2.0.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="b55150f9b025eebdddb6426bb4e85e673af338a3">
-        <dex dex="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\pre-dexed\debug\retrofit-2.0.1_7eb128063390da671c3a740ffdd5a67f8947b8c0.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\exploded-aar\FPVDemo\dJISDKLIB\unspecified\jars\libs\rxjava-1.1.2.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="d4f11e8e7dd89f5f87e5d81000582eabb071da91">
-        <dex dex="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\pre-dexed\debug\rxjava-1.1.2_a0e8134338e9556c7b9fea59635aca759b8a1b63.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\jars\libs\internal_impl-23.3.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
-        <dex dex="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\pre-dexed\debug\internal_impl-23.3.0_2b6605cc0b9f11a69feab3637c7e0a0f914cfa49.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\exploded-aar\FPVDemo\dJISDKLIB\unspecified\jars\libs\okio-1.7.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="58a92147e3365aa0039fc81a31b87f4957e6a555">
-        <dex dex="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\pre-dexed\debug\okio-1.7.0_0f349826c33a5e005fb290b42048705a6aadaa1f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\exploded-aar\com.android.support\design\23.3.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="f0001e71cea6ae432a00021c6f727f5ef0f3d27e">
-        <dex dex="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\pre-dexed\debug\com.android.support-design-23.3.0_4589b14840358c7f555b319f039419b2c453bc0a.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\exploded-aar\io.palaima\smoothbluetooth\0.1.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="2ea7748e9be2448f92cabe35b7d76e89c0e7ec17">
-        <dex dex="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\pre-dexed\debug\io.palaima-smoothbluetooth-0.1.0_c5cfee611916a6775d529a01030714489ccdee58.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="8a034dd16c0dfd75fe86c52c2cd581592acc684a">
-        <dex dex="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.3.0_df90e7cdcc45139b0eb2dd287abbb7b6913a9f86.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.3.0\jars\classes.jar"
+        jar="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.3.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.2"
         sha1="23be6993826b8fd88bbc8d14928bb3b8960d3d4e">
-        <dex dex="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-23.3.0_8b9c261eaa22c8e1bb6f4d363211bafcd1d24162.jar" />
+        <dex dex="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-23.3.0_7fde5f59c9c2f27635570ef9c88b9bfe54bf6e07.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.3.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="1b8e03daaa43fb0a4cd57e378167c2fd70454c1e">
-        <dex dex="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.3.0_769152ccbc36adede3451262f24a1a231d668f6f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="a0b5d60246cd9d4f3f2443611b3b4c25265840b5">
-        <dex dex="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-23.3.0_2fa6e75c2c29b980cb0d4fb8ae39fc8938fadcfe.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\exploded-aar\FPVDemo\dJISDKLIB\unspecified\jars\libs\converter-gson-2.0.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="56caaeea09d3e406f6160972ff5d3e6c0e6f139b">
-        <dex dex="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\pre-dexed\debug\converter-gson-2.0.1_fe9bc6f4a25a8a3c2be0bb9708edcd6bc1d3fd5f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\exploded-aar\FPVDemo\dJISDKLIB\unspecified\jars\libs\okhttp-3.2.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="03773badcb9e99ad699db657fa0e20cafbf774ef">
-        <dex dex="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\pre-dexed\debug\okhttp-3.2.0_792883bbef6ff60ca2a47466081d05cd3df430b2.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\exploded-aar\FPVDemo\openCVLibrary2411\unspecified\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="a0871c7afcd5b0b47ea3abd21178fdba5eb7a648">
-        <dex dex="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\pre-dexed\debug\FPVDemo-openCVLibrary2411-unspecified_44b2248900653b54ffbe5e12ca4219ce67b80479.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\exploded-aar\FPVDemo\dJISDKLIB\unspecified\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="f669566d97545b914257e8dac4c87f287e0d5802">
-        <dex dex="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\pre-dexed\debug\FPVDemo-dJISDKLIB-unspecified_85df2ae906591ed2e7e2a1bb4c57f0d9868d025e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\exploded-aar\FPVDemo\dJISDKLIB\unspecified\jars\libs\dji_gson.jar"
+        jar="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\exploded-aar\FPVDemo\dJISDKLIB\unspecified\jars\libs\dji_gson.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.2"
         sha1="729a9cf81838d286b6098dc9c33d264d5db48a26">
-        <dex dex="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\pre-dexed\debug\dji_gson_3e1480ce1dd2325445be6061d4f55fbd5addb46e.jar" />
+        <dex dex="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\pre-dexed\debug\dji_gson_87b3319cb2b0a8f28ce5bb7b4c37282e3b80ff18.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.3.0\jars\classes.jar"
+        jar="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.2"
-        sha1="debf30ce0a7560396b6235edef77e447006454c2">
-        <dex dex="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-23.3.0_a4d2cb01d713a81a32e1956ea8b0a1cb2f5976db.jar" />
+        sha1="8a034dd16c0dfd75fe86c52c2cd581592acc684a">
+        <dex dex="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.3.0_619d68d63cf29e1fd15be4f1f8874df6fa8ff9b3.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\exploded-aar\FPVDemo\dJISDKLIB\unspecified\jars\libs\dji-sdk.jar"
+        jar="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\exploded-aar\com.android.volley\volley\1.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="2cd4b982617e544728de0782d718a58ce1b06e3f">
+        <dex dex="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\pre-dexed\debug\com.android.volley-volley-1.0.0_5bf22d30f25dd182b38e26c90b28f586ca135d25.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\exploded-aar\io.palaima\smoothbluetooth\0.1.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="2ea7748e9be2448f92cabe35b7d76e89c0e7ec17">
+        <dex dex="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\pre-dexed\debug\io.palaima-smoothbluetooth-0.1.0_ffcc858229e43f3ca612f6ef49a57bd202ec113b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\exploded-aar\FPVDemo\dJISDKLIB\unspecified\jars\libs\rxjava-1.1.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="d4f11e8e7dd89f5f87e5d81000582eabb071da91">
+        <dex dex="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\pre-dexed\debug\rxjava-1.1.2_a17515fa29d3c7eab7d9bfb6ad2b9e19d957c110.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\jars\libs\internal_impl-23.3.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
+        <dex dex="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\pre-dexed\debug\internal_impl-23.3.0_cfd8ff48ecc3c4d24bc2add4b94a4e38e2df67f7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="1b8e03daaa43fb0a4cd57e378167c2fd70454c1e">
+        <dex dex="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.3.0_364b09919d39beb8d7e11cfe3bf345468c3952ab.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\exploded-aar\FPVDemo\dJISDKLIB\unspecified\jars\libs\dji-sdk.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.2"
         sha1="1caeea6670e86792065a293010f09555d21d05e8">
-        <dex dex="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\pre-dexed\debug\dji-sdk_461a3544ce3f94a43b76d3446539ad8620c9195d.jar" />
+        <dex dex="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\pre-dexed\debug\dji-sdk_860e6c7e90274c0eafa6c2c3d32b6ff1b311d84c.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\exploded-aar\FPVDemo\dJISDKLIB\unspecified\jars\libs\sqlbrite-0.6.2.jar"
+        jar="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\exploded-aar\FPVDemo\dJISDKLIB\unspecified\jars\libs\rxandroid-1.1.0.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.2"
-        sha1="80411084d9962ab5b48b274bb4b49e063095535a">
-        <dex dex="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\pre-dexed\debug\sqlbrite-0.6.2_98badf22a95a2d81cd50071c1e37d79463036cbf.jar" />
+        sha1="92b4c46bf73b1caff27f0ad2b73fcd5730fa37de">
+        <dex dex="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\pre-dexed\debug\rxandroid-1.1.0_ed22ce32b1ae63b2b9547fc3a029118bded7fe40.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\exploded-aar\FPVDemo\dJISDKLIB\unspecified\jars\libs\converter-gson-2.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="56caaeea09d3e406f6160972ff5d3e6c0e6f139b">
+        <dex dex="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\pre-dexed\debug\converter-gson-2.0.1_5d00dc71443814b6d249aab653839bdfabd47cda.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\exploded-aar\com.android.support\design\23.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="f0001e71cea6ae432a00021c6f727f5ef0f3d27e">
+        <dex dex="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\pre-dexed\debug\com.android.support-design-23.3.0_c9968b39f4198ca10b524d2511437d3fd12dae94.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\exploded-aar\FPVDemo\dJISDKLIB\unspecified\jars\libs\retrofit-2.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="b55150f9b025eebdddb6426bb4e85e673af338a3">
+        <dex dex="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\pre-dexed\debug\retrofit-2.0.1_03293927acdf345f2521fd9ee24acdd67a440e1b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\exploded-aar\FPVDemo\openCVLibrary2411\unspecified\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="a0871c7afcd5b0b47ea3abd21178fdba5eb7a648">
+        <dex dex="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\pre-dexed\debug\FPVDemo-openCVLibrary2411-unspecified_f0c7844acc550711be47eb8819c2c17ce16c4f37.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\exploded-aar\FPVDemo\dJISDKLIB\unspecified\jars\libs\okio-1.7.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="58a92147e3365aa0039fc81a31b87f4957e6a555">
+        <dex dex="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\pre-dexed\debug\okio-1.7.0_0589386cfcde1481b54bd21cae101fb2f0cfabf8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\exploded-aar\FPVDemo\dJISDKLIB\unspecified\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="ef057ecd217c5842f5304a329aac8d1281b6d028">
+        <dex dex="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\pre-dexed\debug\FPVDemo-dJISDKLIB-unspecified_b6ecde7d54cb794f3395e588c6e0d1c24387d8cc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="debf30ce0a7560396b6235edef77e447006454c2">
+        <dex dex="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-23.3.0_6a8760411423e4827b9b060e580b3c2f8294f367.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\exploded-aar\FPVDemo\dJISDKLIB\unspecified\jars\libs\dji_eventbus.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="91a5399115cedf41ebd53be7c96e424ac3aed1a8">
+        <dex dex="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\pre-dexed\debug\dji_eventbus_805958c4e1f4814e273b3f751ab3abb2360a7cb1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\exploded-aar\FPVDemo\dJISDKLIB\unspecified\jars\libs\rxjava-computation-expressions-0.21.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="1998e4f447fbf0194f39a12f3010d1f4f598667f">
+        <dex dex="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\pre-dexed\debug\rxjava-computation-expressions-0.21.1_8a8b094c9cb811ce2529141b48cb3096bcfbc4d3.jar" />
     </item>
     <item
         is-multidex="false"
@@ -179,16 +179,25 @@
         optimize="true"
         revision="23.0.2"
         sha1="db7791d75a07fef9844d06236c1c59ba7bf6997c">
-        <dex dex="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\pre-dexed\debug\support-annotations-23.3.0_5e324aec22f69feb73f92f5610182a79cb39c008.jar" />
+        <dex dex="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\pre-dexed\debug\support-annotations-23.3.0_5e324aec22f69feb73f92f5610182a79cb39c008.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\exploded-aar\FPVDemo\dJISDKLIB\unspecified\jars\libs\rxandroid-1.1.0.jar"
+        jar="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\exploded-aar\FPVDemo\dJISDKLIB\unspecified\jars\libs\sqlbrite-0.6.2.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.2"
-        sha1="92b4c46bf73b1caff27f0ad2b73fcd5730fa37de">
-        <dex dex="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\pre-dexed\debug\rxandroid-1.1.0_7a35dcf6df3f3ec06f57b5350570221b1b403ab5.jar" />
+        sha1="80411084d9962ab5b48b274bb4b49e063095535a">
+        <dex dex="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\pre-dexed\debug\sqlbrite-0.6.2_f96d8375b80c2d0ee173dabb81d0f5f6c17b77c7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.2"
+        sha1="a0b5d60246cd9d4f3f2443611b3b4c25265840b5">
+        <dex dex="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-23.3.0_3c52e09363fe1bbb17b04da928d697869b5f0282.jar" />
     </item>
     <item
         is-multidex="false"
@@ -197,16 +206,16 @@
         optimize="true"
         revision="23.0.2"
         sha1="f1bc476cc167b18e66c297df599b2377131a8947">
-        <dex dex="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\pre-dexed\debug\gson-2.6.2_833d7a27c76fd00da0ab23ff47168de3ebbf1b1a.jar" />
+        <dex dex="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\pre-dexed\debug\gson-2.6.2_833d7a27c76fd00da0ab23ff47168de3ebbf1b1a.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\exploded-aar\FPVDemo\dJISDKLIB\unspecified\jars\libs\dji_eventbus.jar"
+        jar="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\exploded-aar\FPVDemo\dJISDKLIB\unspecified\jars\libs\okhttp-3.2.0.jar"
         jumboMode="false"
         optimize="true"
         revision="23.0.2"
-        sha1="91a5399115cedf41ebd53be7c96e424ac3aed1a8">
-        <dex dex="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\app\build\intermediates\pre-dexed\debug\dji_eventbus_77e2ed8a23371836d0c575d16a8dd39a9f0256ac.jar" />
+        sha1="03773badcb9e99ad699db657fa0e20cafbf774ef">
+        <dex dex="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\app\build\intermediates\pre-dexed\debug\okhttp-3.2.0_6077ae8f45e74c195ea9fdccd7868151e5e3388d.jar" />
     </item>
 
 </items>

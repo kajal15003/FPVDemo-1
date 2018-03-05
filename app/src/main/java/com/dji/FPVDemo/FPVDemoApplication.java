@@ -34,10 +34,7 @@ public class FPVDemoApplication extends Application{
         return (DJIAircraft) getProductInstance();
     }
 
-    /**
-     * This function is used to get the instance of DJIBaseProduct.
-     * If no product is connected, it returns null.
-     */
+
     public static synchronized DJIBaseProduct getProductInstance() {
         if (null == mProduct) {
             mProduct = DJISDKManager.getInstance().getDJIProduct();
@@ -78,17 +75,14 @@ public class FPVDemoApplication extends Application{
     public void onCreate() {
         super.onCreate();
         mHandler = new Handler(Looper.getMainLooper());
-        //This is used to start SDK services and initiate SDK.
+
         DJISDKManager.getInstance().initSDKManager(this, mDJISDKManagerCallback);
     }
 
-    /**
-     * When starting SDK services, an instance of interface DJISDKManager.DJISDKManagerCallback will be used to listen to 
-     * the SDK Registration result and the product changing.
-     */
+
     private DJISDKManager.DJISDKManagerCallback mDJISDKManagerCallback = new DJISDKManager.DJISDKManagerCallback() {
 
-        //Listens to the SDK registration result
+
         @Override
         public void onGetRegisteredResult(DJIError error) {
 
@@ -119,7 +113,7 @@ public class FPVDemoApplication extends Application{
             Log.e("TAG", error.toString());
         }
 
-        //Listens to the connected product changing, including two parts, component changing or product connection changing.
+
         @Override
         public void onProductChanged(DJIBaseProduct oldProduct, DJIBaseProduct newProduct) {
 

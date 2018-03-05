@@ -1,60 +1,41 @@
+
 package com.dji.FPVDemo;
 
 import android.app.Activity;
-import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothDevice;
-import android.bluetooth.BluetoothSocket;
-import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.Shader;
 import android.graphics.SurfaceTexture;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Looper;
-import android.os.ParcelUuid;
+import android.util.Base64;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.TextureView;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.TextureView.SurfaceTextureListener;
 import android.widget.Button;
 import android.widget.CompoundButton;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.opencv.android.OpenCVLoader;
 import org.opencv.android.Utils;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
-import org.opencv.core.MatOfDouble;
-import org.opencv.core.MatOfRect;
-import org.opencv.core.Rect;
-import org.opencv.core.Size;
 import org.opencv.imgproc.Imgproc;
-import org.opencv.objdetect.HOGDescriptor;
-
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.ByteArrayOutputStream;
 import java.nio.ByteBuffer;
-import java.util.List;
-import java.util.Set;
-import java.util.Timer;
-import java.util.TimerTask;
-import java.util.UUID;
-
+import java.util.Vector;
 import dji.common.camera.CameraSystemState;
 import dji.common.camera.DJICameraSettingsDef;
 import dji.common.error.DJIError;
-import dji.common.flightcontroller.DJIFlightControllerControlMode;
-import dji.common.flightcontroller.DJIFlightControllerRemoteControllerFlightMode;
-import dji.common.flightcontroller.DJIFlightFailsafeOperation;
-import dji.common.flightcontroller.DJIFlightOrientationMode;
-import dji.common.flightcontroller.DJIIMUState;
-import dji.common.flightcontroller.DJILocationCoordinate2D;
 import dji.common.flightcontroller.DJIVirtualStickFlightControlData;
 import dji.common.flightcontroller.DJIVirtualStickFlightCoordinateSystem;
 import dji.common.flightcontroller.DJIVirtualStickRollPitchControlMode;
@@ -62,66 +43,68 @@ import dji.common.flightcontroller.DJIVirtualStickVerticalControlMode;
 import dji.common.flightcontroller.DJIVirtualStickYawControlMode;
 import dji.common.product.Model;
 import dji.common.util.DJICommonCallbacks;
-import dji.sdk.camera.DJICamera;
-import dji.sdk.camera.DJICamera.CameraReceivedVideoDataCallback;
-import dji.sdk.codec.DJICodecManager;
 import dji.sdk.base.DJIBaseProduct;
-import dji.sdk.flightcontroller.DJIFlightController;
-import dji.sdk.flightcontroller.DJIFlightControllerDelegate;
-import io.palaima.smoothbluetooth.Device;
-import io.palaima.smoothbluetooth.SmoothBluetooth;
-
+import dji.sdk.camera.DJICamera;
+import dji.sdk.codec.DJICodecManager;
 import static com.dji.FPVDemo.FPVDemoApplication.getProductInstance;
 
 
-public class MainActivity extends Activity implements SurfaceTextureListener,OnClickListener{
+public class MainActivity extends Activity implements TextureView.SurfaceTextureListener/*,View.OnClickListener*/ {
 
-    private static final String TAG = MainActivity.class.getName();
-    public native static String KCFTracker(long addr,float a,float b,float c,float d);
-    EditText text;
+
+    public static final String urlUpload = "http://192.168.1.187:8000/images";
+    public static final String urlUpload1 = "http://192.168.28.124:8000/detect";
+    public static final String imageList = "file";
+    public static final String imageNameList = "name";
+    int count_images=0;
+    public Vector<String> encodedImageList = new Vector<>();
+    public Vector<String>encodedImageNameList = new Vector<>();
+
+    private static final String TAG = "Loaded Flag";
+    public native static String KCFTracker(long addr,float a[],float b[],float c[],float d[]);
+    public native static String KCFTracker2(long addr,float a,float b,float c,float d);
+
+    String position_of_culprit="";
+    int initilize=0;
+
+    float x_array[],y_array[],w_array[],h_array[];
+    float[] dumy_array = {0.0f};
+
     Mat tmp;
     private Handler mHandler;
-    Timer t;
-    Double p_a=0.0;
-    Double p_b=0.0;
-    Button p_control;
     ImageView result;
-    private SmoothBluetooth mSmoothBluetooth;
     protected DJICamera.CameraReceivedVideoDataCallback mReceivedVideoDataCallBack = null;
     Double controla=0.0028;
     Double controlb=0.003;
     TextView hello;
     TextView hello1;
     TextView hello2;
-    //int s1,s2,s3,s4;
+    int response_position;
+    int response_index;
     Bitmap bmp;
     Bitmap bm;
     int count=0;
-    //int init=0;
-    //int x1,y1;
     protected DJICodecManager mCodecManager = null;
     int recordbit=0;
     protected TextureView mVideoSurface = null;
-    private Button mCaptureBtn, mShootPhotoModeBtn, mRecordVideoModeBtn;
+   // private Button mCancel;
     private ToggleButton mRecordBtn;
-    private TextView recordingTime;
-    //private OutputStream outputStream;
-    //private InputStream inStream;
-
+    int flag=-1;
+    int try_once=0;
+    int handeler_flag=0;
 
     static{
         if(OpenCVLoader.initDebug())
         {
             System.loadLibrary("KCF");
-            Log.d(TAG,"Successfully Loaded");
+            System.loadLibrary("KCF2");
+            //Log.d(TAG,"Successfully Loaded");
         }
         else
         {
-            Log.d(TAG,"OpenCV Not Loaded");
+            //Log.d(TAG,"OpenCV Not Loaded");
         }
     }
-
-
 
 
     @Override
@@ -130,260 +113,12 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mHandler = new Handler(Looper.getMainLooper());
-        mSmoothBluetooth = new SmoothBluetooth(this);
-        mSmoothBluetooth.setListener(mListener);
-        mSmoothBluetooth.doDiscovery();
-        mSmoothBluetooth.tryConnection();
 
         initUI();
-        t = new Timer();
-        /*DJIFlightController flightController=new DJIFlightController() {
-            @Override
-            public boolean isIntelligentFlightAssistantSupported() {
-                return false;
-            }
 
-            @Override
-            public boolean isLandingGearMovable() {
-                return false;
-            }
-
-            @Override
-            public boolean isRtkSupported() {
-                return false;
-            }
-
-            @Override
-            public void setFlightFailsafeOperation(DJIFlightFailsafeOperation djiFlightFailsafeOperation, DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
-
-            }
-
-            @Override
-            public void getFlightFailsafeOperation(DJICommonCallbacks.DJICompletionCallbackWith<DJIFlightFailsafeOperation> djiCompletionCallbackWith) {
-
-            }
-
-            @Override
-            public void takeOff(DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
-
-            }
-
-            @Override
-            public void cancelTakeOff(DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
-
-            }
-
-            @Override
-            public void autoLanding(DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
-
-            }
-
-            @Override
-            public void cancelAutoLanding(DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
-
-            }
-
-            @Override
-            public void turnOnMotors(DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
-
-            }
-
-            @Override
-            public void turnOffMotors(DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
-
-            }
-
-            @Override
-            public void goHome(DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
-
-            }
-
-            @Override
-            public void cancelGoHome(DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
-
-            }
-
-            @Override
-            public void setHomeLocation(DJILocationCoordinate2D djiLocationCoordinate2D, DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
-
-            }
-
-            @Override
-            public void getHomeLocation(DJICommonCallbacks.DJICompletionCallbackWith<DJILocationCoordinate2D> djiCompletionCallbackWith) {
-
-            }
-
-            @Override
-            public void setGoHomeAltitude(float v, DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
-
-            }
-
-            @Override
-            public void getGoHomeAltitude(DJICommonCallbacks.DJICompletionCallbackWith<Float> djiCompletionCallbackWith) {
-
-            }
-
-            @Override
-            public boolean isOnboardSDKDeviceAvailable() {
-                return false;
-            }
-
-            @Override
-            public void sendDataToOnboardSDKDevice(byte[] bytes, DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
-
-            }
-
-            @Override
-            public void setLEDsEnabled(boolean b, DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
-
-            }
-
-            @Override
-            public void getLEDsEnabled(DJICommonCallbacks.DJICompletionCallbackWith<Boolean> djiCompletionCallbackWith) {
-
-            }
-
-            @Override
-            public void setFlightOrientationMode(DJIFlightOrientationMode djiFlightOrientationMode, DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
-
-            }
-
-            @Override
-            public void lockCourseUsingCurrentDirection(DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
-
-            }
-
-            @Override
-            public boolean isVirtualStickControlModeAvailable() {
-                return true;
-            }
-
-            @Override
-            public void sendVirtualStickFlightControlData(DJIVirtualStickFlightControlData djiVirtualStickFlightControlData, DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
-
-            }
-
-            @Override
-            public void enableVirtualStickControlMode(DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
-
-            }
-
-            @Override
-            public void disableVirtualStickControlMode(DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
-
-            }
-
-            @Override
-            public void setGoHomeBatteryThreshold(int i, DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
-
-            }
-
-            @Override
-            public void getGoHomeBatteryThreshold(DJICommonCallbacks.DJICompletionCallbackWith<Integer> djiCompletionCallbackWith) {
-
-            }
-
-            @Override
-            public void setLandImmediatelyBatteryThreshold(int i, DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
-
-            }
-
-            @Override
-            public void getLandImmediatelyBatteryThreshold(DJICommonCallbacks.DJICompletionCallbackWith<Integer> djiCompletionCallbackWith) {
-
-            }
-
-            @Override
-            public void setHomeLocationUsingAircraftCurrentLocation(DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
-
-            }
-
-            @Override
-            public void setOnIMUStateChangedCallback(DJIFlightControllerDelegate.FlightControllerIMUStateChangedCallback flightControllerIMUStateChangedCallback) {
-
-            }
-
-            @Override
-            public void startIMUCalibration(DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
-
-            }
-
-            @Override
-            public void startIMUCalibration(int i, DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
-
-            }
-
-            @Override
-            public int getNumberOfIMUs() {
-                return 0;
-            }
-
-            @Override
-            public void setControlMode(DJIFlightControllerControlMode djiFlightControllerControlMode, DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
-
-            }
-
-            @Override
-            public void getControlMode(DJICommonCallbacks.DJICompletionCallbackWith<DJIFlightControllerControlMode> djiCompletionCallbackWith) {
-
-            }
-
-            @Override
-            public void setTripodModeEnabled(Boolean aBoolean, DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
-
-            }
-
-            @Override
-            public void getTripodModeEnabled(DJICommonCallbacks.DJICompletionCallbackWith<Boolean> djiCompletionCallbackWith) {
-
-            }
-
-            @Override
-            public void setAutoQuickSpinEnabled(Boolean aBoolean, DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
-
-            }
-
-            @Override
-            public void getQuickSpinEnabled(DJICommonCallbacks.DJICompletionCallbackWith<Boolean> djiCompletionCallbackWith) {
-
-            }
-
-            @Override
-            public void getMultiSideIMUCalibrationStatus(DJICommonCallbacks.DJICompletionCallbackWith<DJIIMUState> djiCompletionCallbackWith) {
-
-            }
-
-            @Override
-            public void setTerrainFollowModeEnabled(Boolean aBoolean, DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
-
-            }
-
-            @Override
-            public void getTerrainFollowModeEnable(DJICommonCallbacks.DJICompletionCallbackWith<Boolean> djiCompletionCallbackWith) {
-
-            }
-
-            @Override
-            public void confirmLanding(DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
-
-            }
-
-            @Override
-            public void isLandingConfirmationNeeded(DJICommonCallbacks.DJICompletionCallbackWith<Boolean> djiCompletionCallbackWith) {
-
-            }
-
-            @Override
-            public void getRemoteControllerFlightModeMappingWithCompletion(DJICommonCallbacks.DJICompletionCallbackWith<DJIFlightControllerRemoteControllerFlightMode[]> djiCompletionCallbackWith) {
-
-            }
-        };
-*/
         FPVDemoApplication.getAircraftInstance().getFlightController().enableVirtualStickControlMode(new DJICommonCallbacks.DJICompletionCallback() {
             @Override
             public void onResult(DJIError djiError) {
-
             }
         });
 
@@ -394,15 +129,14 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
         FPVDemoApplication.getAircraftInstance().getFlightController().setYawControlMode(DJIVirtualStickYawControlMode.AngularVelocity);
 
 
-        mReceivedVideoDataCallBack = new CameraReceivedVideoDataCallback() {
+        mReceivedVideoDataCallBack = new DJICamera.CameraReceivedVideoDataCallback() {
 
             @Override
             public void onResult(byte[] videoBuffer, int size) {
                 if(mCodecManager != null){
-
                     mCodecManager.sendDataToDecoder(videoBuffer, size);
                 }else {
-                    Log.e(TAG, "mCodecManager is null");
+                    //Log.e(TAG, "mCodecManager is null");
                 }
             }
         };
@@ -414,48 +148,10 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
             camera.setDJICameraUpdatedSystemStateCallback(new DJICamera.CameraUpdatedSystemStateCallback() {
                 @Override
                 public void onResult(CameraSystemState cameraSystemState) {
-                    if (null != cameraSystemState) {
-
-                        int recordTime = cameraSystemState.getCurrentVideoRecordingTimeInSeconds();
-                        int minutes = (recordTime % 3600) / 60;
-                        int seconds = recordTime % 60;
-
-                        final String timeString = String.format("%02d:%02d", minutes, seconds);
-                        final boolean isVideoRecording = cameraSystemState.isRecording();
-
-                        MainActivity.this.runOnUiThread(new Runnable() {
-
-                            @Override
-                            public void run() {
-
-                                recordingTime.setText(timeString);
-
-                                if (isVideoRecording){
-                                    recordingTime.setVisibility(View.VISIBLE);
-                                }
-                            }
-                        });
-                    }
                 }
             });
 
         }
-
-        /*result.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent event) {
-                int action = event.getAction();
-                x1 = (int) event.getX();
-                y1 = (int) event.getY();
-                x1 = (int) ((double) x1 * ((double) bmp.getWidth()/(double) result.getWidth()));
-                y1 = (int) ((double) y1 * ((double) bmp.getHeight() / (double) result.getHeight()));
-                init++;
-                Toast.makeText(getApplicationContext(),x1+"-"+y1,Toast.LENGTH_SHORT).show();
-                return true;
-            }
-        });*/
-
-
 
     }
 
@@ -470,7 +166,7 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
 
     @Override
     public void onResume() {
-        //Log.e(TAG, "onResume");
+
         super.onResume();
         initPreviewer();
         onProductChange();
@@ -485,64 +181,50 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
         FPVDemoApplication.getAircraftInstance().getFlightController().setRollPitchControlMode(DJIVirtualStickRollPitchControlMode.Velocity);
         FPVDemoApplication.getAircraftInstance().getFlightController().setYawControlMode(DJIVirtualStickYawControlMode.AngularVelocity);
         if(mVideoSurface == null) {
-            Log.e(TAG, "mVideoSurface is null");
+            //Log.e(TAG, "mVideoSurface is null");
         }
     }
 
     @Override
     public void onPause() {
-       // Log.e(TAG, "onPause");
+
         uninitPreviewer();
         super.onPause();
     }
 
     @Override
     public void onStop() {
-        //Log.e(TAG, "onStop");
+
         super.onStop();
     }
 
-  /*  public void onReturn(View view){
-        Log.e(TAG, "onReturn");
-        this.finish();
-    }*/
+
 
     @Override
     protected void onDestroy() {
-       // Log.e(TAG, "onDestroy");
+
         uninitPreviewer();
         super.onDestroy();
     }
 
     private void initUI() {
 
-
+        mHandler=new Handler();
         mVideoSurface = (TextureView)findViewById(R.id.video_previewer_surface);
-        hello=(TextView)findViewById(R.id.kunal);
-        hello1=(TextView)findViewById(R.id.kunal1);
-        hello2=(TextView)findViewById(R.id.kunal2);
+        hello=(TextView)findViewById(R.id.kunal);   //result from KCF Tracker
+        hello1=(TextView)findViewById(R.id.kunal1); // velocity in x and y
+        hello2=(TextView)findViewById(R.id.kunal2); // scale in x and y
         result=(ImageView)findViewById(R.id.result);
-        recordingTime = (TextView) findViewById(R.id.timer);
-        mCaptureBtn = (Button) findViewById(R.id.btn_capture);
-        mRecordBtn = (ToggleButton) findViewById(R.id.btn_record);
-        mShootPhotoModeBtn = (Button) findViewById(R.id.btn_shoot_photo_mode);
-        mRecordVideoModeBtn = (Button) findViewById(R.id.btn_record_video_mode);
-        text=(EditText)findViewById(R.id.text);
-        p_control=(Button)findViewById(R.id.proportional);
 
+        mRecordBtn = (ToggleButton) findViewById(R.id.btn_record);
+       // mCancel = (Button) findViewById(R.id.btn_cancel);
 
         if (null != mVideoSurface) {
             mVideoSurface.setSurfaceTextureListener(this);
         }
 
-
-        p_control.setOnClickListener(this);
-        mCaptureBtn.setOnClickListener(this);
-        mRecordBtn.setOnClickListener(this);
-        mShootPhotoModeBtn.setOnClickListener(this);
-        mRecordVideoModeBtn.setOnClickListener(this);
-
-        recordingTime.setVisibility(View.INVISIBLE);
+       //mRecordBtn.setOnClickListener(this);
+        // mCancel.setOnClickListener(this);
 
         mRecordBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -556,8 +238,6 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
         });
 
     }
-
-
 
 
 
@@ -589,103 +269,26 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
 
     @Override
     public void onSurfaceTextureAvailable(SurfaceTexture surface, int width, int height) {
-        //Log.e(TAG, "onSurfaceTextureAvailable");
+
         if (mCodecManager == null) {
             mCodecManager = new DJICodecManager(this, surface, width, height);
-
         }
     }
 
     @Override
     public void onSurfaceTextureSizeChanged(SurfaceTexture surface, int width, int height) {
-       // Log.e(TAG, "onSurfaceTextureSizeChanged");
+
     }
 
     @Override
     public boolean onSurfaceTextureDestroyed(SurfaceTexture surface) {
-       // Log.e(TAG,"onSurfaceTextureDestroyed");
+
         if (mCodecManager != null) {
             mCodecManager.cleanSurface();
             mCodecManager = null;
         }
 
         return false;
-    }
-
-
-    @Override
-    public void onSurfaceTextureUpdated(SurfaceTexture surface) {
-
-        if(recordbit!=0) {
-            bmp = mVideoSurface.getBitmap();
-            int bytes = bmp.getByteCount();
-            ByteBuffer buffer = ByteBuffer.allocate(bytes);
-            bmp.copyPixelsToBuffer(buffer);
-            byte[] array = buffer.array();
-            tmp=new Mat(bmp.getHeight(),bmp.getWidth(),CvType.CV_8UC4);
-            tmp.put(0,0,array);
-            Imgproc.cvtColor(tmp,tmp, Imgproc.COLOR_RGBA2RGB);
-
-            if(count!=0) {
-
-                hello.setText((KCFTracker(tmp.getNativeObjAddr(),0, 0, 0,0)+""));
-                String s=hello.getText().toString();
-                String[] parts = s.split("-");
-                double a=Float.parseFloat(parts[0]);
-                double b=Float.parseFloat(parts[1]);
-                double c=Float.parseFloat(parts[2]);
-                double d=Float.parseFloat(parts[3]);
-                int scale_x=get_scale_x(c,tmp.rows()/2);
-                int scale_y=get_scale_y(d,tmp.cols()/2);
-                a=scale_x*controla*((a+c/2)-(tmp.cols()/2));
-                b=scale_y*controlb*((tmp.rows()/2)-(b+d/2));
-                hello1.setText("velociy:"+a+"-"+b);
-                hello2.setText("scale: "+scale_x+"-"+scale_y);
-                final float af=(float)a;
-                final float bf=(float)b;
-                final float height1=(float)Math.abs(p_a-((a+c/2)-(tmp.cols()/2)));
-                final float height2=(float)Math.abs(p_b-((tmp.rows()/2)-(b+d/2)));
-                p_a=((a+c/2)-(tmp.cols()/2));
-                p_b=((tmp.rows()/2)-(b+d/2));
-                final float height=Math.min(Math.max(height1,height2),2);
-
-                mHandler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        FPVDemoApplication.getAircraftInstance().
-                                getFlightController().sendVirtualStickFlightControlData(
-                                new DJIVirtualStickFlightControlData(
-                                        af,bf, 0, height
-                                ), new DJICommonCallbacks.DJICompletionCallback() {
-                                    @Override
-                                    public void onResult(DJIError djiError) {
-
-                                    }
-                                }
-                        );
-                    }
-                },100);
-
-
-
-                bm = Bitmap.createBitmap(tmp.cols(), tmp.rows(),Bitmap.Config.ARGB_8888);
-                Utils.matToBitmap(tmp, bm);
-                result.setImageBitmap(bm);
-                count++;
-            }
-            else
-            {
-                bm = Bitmap.createBitmap(tmp.cols(), tmp.rows(),Bitmap.Config.ARGB_8888);
-                Utils.matToBitmap(tmp, bm);
-                result.setImageBitmap(bm);
-                hello.setText((KCFTracker(tmp.getNativeObjAddr(), 0, 0, 0 , 0) + ""));
-                if(hello.getText().toString()!="NO" && hello.getText().toString()!="") {
-                    count++;
-                }
-            }
-
-            recordbit++;
-        }
     }
 
     public int get_scale_x(double position_x, int size_x) {
@@ -706,6 +309,7 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
 
 
     public int get_scale_y(double position_y, int size_y) {
+
         double diff=Math.abs(size_y-position_y);
         if(diff<=100)
             return 1;
@@ -719,6 +323,330 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
             return 5;
     }
 
+
+    public void detect_person(Bitmap bm)
+    {
+
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        bm.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
+        byte[] imageBytes = byteArrayOutputStream.toByteArray();
+        String encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put("image",encodedImage);
+        } catch (JSONException e) {
+            showToast("JSONObject Error");
+        }
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, urlUpload1, jsonObject,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject jsonObject) {
+
+                        try {
+
+                            JSONArray x = jsonObject.getJSONArray("x_array");
+                            JSONArray y = jsonObject.getJSONArray("y_array");
+                            JSONArray w = jsonObject.getJSONArray("w_array");
+                            JSONArray h = jsonObject.getJSONArray("h_array");
+
+                            if(x.length()>0)
+                            {
+
+                                flag =1;
+                                x_array=new float[x.length()];
+                                y_array=new float[x.length()];
+                                w_array=new float[x.length()];
+                                h_array=new float[x.length()];
+
+                                for(int i=0;i<x.length();i++)
+                                {
+                                    x_array[i]=((Double)x.get(i)).floatValue();
+
+                                    y_array[i]=((Double)y.get(i)).floatValue();
+                                    w_array[i]=((Double)w.get(i)).floatValue();
+                                    h_array[i]=((Double)h.get(i)).floatValue();
+                                }
+
+                            }
+                            else
+                            {
+                                flag=0;
+
+                            }
+
+                        } catch (JSONException e) {
+                            flag=2;
+                            showToast("Error in function");
+                            e.printStackTrace();
+                        }
+
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError volleyError) {
+                showToast("Volley Error"+volleyError);
+            }
+        });
+
+        jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(20000, 0,(float)2.0));
+        Volley.newRequestQueue(this).add(jsonObjectRequest);
+
+
+    }
+
+
+
+
+    @Override
+    public void onSurfaceTextureUpdated(SurfaceTexture surface) {
+
+        if(recordbit!=0) {
+            bmp = mVideoSurface.getBitmap();
+            int bytes = bmp.getByteCount();
+            ByteBuffer buffer = ByteBuffer.allocate(bytes);
+            bmp.copyPixelsToBuffer(buffer);
+            byte[] array = buffer.array();
+            tmp=new Mat(bmp.getHeight(),bmp.getWidth(), CvType.CV_8UC4);
+            tmp.put(0,0,array);
+            Imgproc.cvtColor(tmp,tmp, Imgproc.COLOR_RGBA2RGB);
+
+            if(count==-1)
+            {
+
+                if(initilize==0)
+                {
+
+                    hello.setText((KCFTracker(tmp.getNativeObjAddr(),dumy_array, dumy_array, dumy_array , dumy_array)+""));
+                    String s=hello.getText().toString();
+                    String[] parts = s.split("@");
+                    position_of_culprit=parts[response_position];
+                    String[] sub_parts=position_of_culprit.split(":");
+                    float a=Float.parseFloat(sub_parts[0]);
+                    float b=Float.parseFloat(sub_parts[1]);
+                    float c=Float.parseFloat(sub_parts[2]);
+                    float d=Float.parseFloat(sub_parts[3]);
+                    bm = Bitmap.createBitmap(tmp.cols(), tmp.rows(),Bitmap.Config.ARGB_8888);
+                    Utils.matToBitmap(tmp, bm);
+                    result.setImageBitmap(bm);
+                    hello.setText((KCFTracker2(tmp.getNativeObjAddr(), a, b, c,d) + ""));
+                    initilize=1;
+                }
+                else
+                {
+                    hello.setText((KCFTracker2(tmp.getNativeObjAddr(), 0, 0, 0, 0) + ""));
+                    String s = hello.getText().toString();
+                    String[] parts = s.split("@");
+                    double a = Float.parseFloat(parts[0]);
+                    double b = Float.parseFloat(parts[1]);
+                    double c = Float.parseFloat(parts[2]);
+                    double d = Float.parseFloat(parts[3]);
+                    int scale_x=get_scale_x((a+c/2.0),tmp.rows()/2);
+                    int scale_y=get_scale_y((b+d/2.0),tmp.cols()/2);
+                    a=scale_x*controla*((a+c/2.0)-(tmp.cols()/2.0));
+                    b=scale_y*controlb*((tmp.rows()/2.0)-(b+d/2.0));
+                    hello1.setText("velocity2:" + a + " " + b);
+                    hello2.setText("scale2: " + scale_x + " " + scale_y);
+                    final float af = (float) a;
+                    final float bf = (float) b;
+                    if(handeler_flag==0) {
+                        handeler_flag=1;
+
+                        mHandler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                FPVDemoApplication.getAircraftInstance().
+                                        getFlightController().sendVirtualStickFlightControlData(
+                                        new DJIVirtualStickFlightControlData(
+                                                af, bf, 0, 0
+                                        ), new DJICommonCallbacks.DJICompletionCallback() {
+                                            @Override
+                                            public void onResult(DJIError djiError) {
+
+                                            }
+                                        }
+                                );
+
+                                mHandler.postDelayed(this,100);
+                            }
+                        });
+                    }
+                    bm = Bitmap.createBitmap(tmp.cols(), tmp.rows(), Bitmap.Config.ARGB_8888);
+                    Utils.matToBitmap(tmp, bm);
+                    result.setImageBitmap(bm);
+
+                }
+
+            }
+            else if(count>0)
+            {
+
+
+                hello.setText((KCFTracker(tmp.getNativeObjAddr(), dumy_array, dumy_array, dumy_array , dumy_array) + ""));
+                String s=hello.getText().toString();
+
+                String[] parts = s.split("@");
+                double mean_x = 0.0, mean_y = 0.0;
+                for (int i = 0; i < parts.length; i++) {
+                    String[] sub_parts = parts[i].split(":");
+                    double a = Float.parseFloat(sub_parts[0]);
+                    double b = Float.parseFloat(sub_parts[1]);
+                    double c = Float.parseFloat(sub_parts[2]);
+                    double d = Float.parseFloat(sub_parts[3]);
+                    mean_x = mean_x + (a + c/2.0);
+                    mean_y = mean_y + (b + d/2.0);
+                }
+                mean_x = mean_x / parts.length;
+                mean_y = mean_y / parts.length;
+                int scale_x=get_scale_x(mean_x,tmp.rows()/2);
+                int scale_y=get_scale_y(mean_y,tmp.cols()/2);
+                double a=scale_x*controla*(mean_x - (tmp.cols() / 2));
+                double b=scale_y*controlb*((tmp.rows() / 2) - mean_y);
+
+                hello1.setText("velocity1:" + a + " " + b);
+                hello2.setText("scale1: " + scale_x + " " + scale_y);
+                final float af = (float) a;
+                final float bf = (float) b;
+
+                if(handeler_flag==0) {
+                    handeler_flag=1;
+                    mHandler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            FPVDemoApplication.getAircraftInstance().
+                                    getFlightController().sendVirtualStickFlightControlData(
+                                    new DJIVirtualStickFlightControlData(
+                                            af, bf, 0, 0
+                                    ), new DJICommonCallbacks.DJICompletionCallback() {
+                                        @Override
+                                        public void onResult(DJIError djiError) {
+
+                                        }
+                                    }
+                            );
+
+                            mHandler.postDelayed(this,100);
+                        }
+                    });
+                }
+
+                if (count_images < 16) {
+
+                    bm = Bitmap.createBitmap(tmp.cols(), tmp.rows(), Bitmap.Config.ARGB_8888);
+                    Utils.matToBitmap(tmp, bm);
+                    ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+                    bm.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
+                    byte[] imageBytes = byteArrayOutputStream.toByteArray();
+                    String encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
+                    encodedImageList.add(encodedImage);
+                    encodedImageNameList.add(s);
+                    count_images++;
+                    //Log.d("CountMain","Counter Image: "+count_images);
+                }
+                else if (count_images == 16)
+                {
+                    //Log.d("CountMain","Counter Image: "+count_images);
+                    JSONArray jsonArray = new JSONArray();
+                    JSONArray jsonArray_name = new JSONArray();
+                    JSONObject jsonObject = new JSONObject();
+
+                    for (String encoded : encodedImageList) {
+                        jsonArray.put(encoded);
+                    }
+                    for (String name : encodedImageNameList) {
+                        jsonArray_name.put(name);
+                    }
+                    showToast("Images Added");
+                    try {
+                        jsonObject.put(imageNameList, jsonArray_name);
+                        jsonObject.put(imageList, jsonArray);
+                    } catch (JSONException e) {
+                        showToast("JSONObject Error");
+                    }
+                    JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, urlUpload, jsonObject,
+                            new Response.Listener<JSONObject>() {
+                                @Override
+                                public void onResponse(JSONObject jsonObject) {
+
+                                    try {
+                                        showToast("Server Responded");
+                                        response_position = (int) jsonObject.get("id");
+                                        response_index=(int) jsonObject.get("index");
+                                        handeler_flag=0;
+                                        mHandler.removeCallbacksAndMessages(null);
+                                        count = -1;
+                                        encodedImageList.clear();
+                                        encodedImageNameList.clear();
+                                    } catch (JSONException e) {
+                                        showToast("JSON ERROR: "+e.toString());
+                                    }
+
+                                }
+                            }, new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError volleyError) {
+                            showToast("Volley Error Images: "+volleyError);
+                            encodedImageList.clear();
+                            encodedImageNameList.clear();
+                            count_images=0;
+                        }
+                    });
+
+                    jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(60000, 1,(float)5.0));
+                    Volley.newRequestQueue(this).add(jsonObjectRequest);
+
+
+                    count_images++;
+
+                }
+
+                bm = Bitmap.createBitmap(tmp.cols(), tmp.rows(), Bitmap.Config.ARGB_8888);
+                Utils.matToBitmap(tmp, bm);
+                result.setImageBitmap(bm);
+                count++;
+
+            }
+
+            else
+            {
+
+                bm = Bitmap.createBitmap(tmp.cols(), tmp.rows(),Bitmap.Config.ARGB_8888);
+                Utils.matToBitmap(tmp, bm);
+                result.setImageBitmap(bm);
+                if(try_once==0) {
+                    showToast("Try to Detected People");
+                    try_once=1;
+                    detect_person(bm);
+                }
+
+                if(flag==1) {
+
+                    showToast("Server Detected People");
+                    hello.setText((KCFTracker(tmp.getNativeObjAddr(), x_array, y_array, w_array , h_array) + ""));
+                    if(hello.getText().toString().equals("YES")) {
+                        hello.setText((KCFTracker(tmp.getNativeObjAddr(), dumy_array, dumy_array, dumy_array , dumy_array) + ""));
+                        count++;
+                    }
+
+                }
+                else if(flag==0 || flag==2)
+                {
+                    showToast("Not Able To Detect");
+                    count=0;
+                    try_once=0;
+                }
+                else
+                {
+                    count=0;
+                }
+
+            }
+
+        }
+
+    }
+
     public void showToast(final String msg) {
         runOnUiThread(new Runnable() {
             public void run() {
@@ -727,156 +655,35 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
         });
     }
 
-    @Override
+   /* @Override
     public void onClick(View v) {
 
         switch (v.getId()) {
-            /*case R.id.btn_capture:{
-                captureAction();
-                break;
-            }*/
-            case R.id.btn_shoot_photo_mode:{
-                //switchCameraMode(DJICameraSettingsDef.CameraMode.ShootPhoto);
+            //useless
+            case R.id.btn_cancel:{
+
+                mHandler.removeCallbacksAndMessages(null);
                 recordbit=0;
                 controla=0.0;
+                handeler_flag=0;
+                try_once=0;
                 controlb=0.0;
+                showToast("Stop!!");
                 break;
             }
-            case R.id.btn_record_video_mode:{
-                switchCameraMode(DJICameraSettingsDef.CameraMode.RecordVideo);
-                break;
-            }
-            case R.id.proportional:{
 
-                Toast.makeText(getApplicationContext(),"Recording stopped",Toast.LENGTH_SHORT).show();
-                //switchCameraMode(DJICameraSettingsDef.CameraMode.RecordVideo); this is not working
-                stopRecord();
-                mSmoothBluetooth.send("1");
-                break;
-            }
             default:
                 break;
         }
-    }
-
-
-    private SmoothBluetooth.Listener mListener = new SmoothBluetooth.Listener() {
-        @Override
-        public void onBluetoothNotSupported() {
-            Toast.makeText(MainActivity.this, "Bluetooth not found", Toast.LENGTH_SHORT).show();
-            finish();
-        }
-
-        @Override
-        public void onBluetoothNotEnabled() {
-            Intent enableBluetooth = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-            startActivityForResult(enableBluetooth,1);
-        }
-
-        @Override
-        public void onConnecting(Device device) {
-            Toast.makeText(getApplicationContext(),"Connecting to"+device.getName(),Toast.LENGTH_SHORT).show();
-        }
-
-        @Override
-        public void onConnected(Device device) {
-            Toast.makeText(getApplicationContext(),"Connected to",Toast.LENGTH_SHORT).show();
-        }
-
-        @Override
-        public void onDisconnected() {
-            Toast.makeText(getApplicationContext(),"Disconnected",Toast.LENGTH_SHORT).show();
-        }
-
-        @Override
-        public void onConnectionFailed(Device device) {
-            Toast.makeText(MainActivity.this, "Failed to connect", Toast.LENGTH_SHORT).show();
-            if (device.isPaired()) {
-                mSmoothBluetooth.doDiscovery();
-            }
-        }
-
-        @Override
-        public void onDiscoveryStarted() {
-            Toast.makeText(MainActivity.this, "Searching", Toast.LENGTH_SHORT).show();
-        }
-
-        @Override
-        public void onDiscoveryFinished() {
-
-        }
-
-        @Override
-        public void onNoDevicesFound() {
-            Toast.makeText(MainActivity.this, "No device found", Toast.LENGTH_SHORT).show();
-        }
-
-        @Override
-        public void onDevicesFound(List<Device> deviceList, SmoothBluetooth.ConnectionCallback connectionCallback) {
-            connectionCallback.connectTo(deviceList.get(0));
-        }
-
-        @Override
-        public void onDataReceived(int data) {
-            Toast.makeText(MainActivity.this, "Data Received", Toast.LENGTH_SHORT).show();
-            //switchCameraMode(DJICameraSettingsDef.CameraMode.RecordVideo); this is not working
-            startRecord();
-        }
-    };
+    }*/
 
 
 
 
-    private void switchCameraMode(DJICameraSettingsDef.CameraMode cameraMode){
-
-        DJICamera camera = FPVDemoApplication.getCameraInstance();
-        if (camera != null) {
-            camera.setCameraMode(cameraMode, new DJICommonCallbacks.DJICompletionCallback() {
-                @Override
-                public void onResult(DJIError error) {
-
-                    if (error == null) {
-                        showToast("Switch Camera Mode Succeeded");
-                    } else {
-                        showToast(error.getDescription());
-                    }
-                }
-            });
-            }
-
-    }
-
-
-  /*  private void captureAction(){
-
-        DJICameraSettingsDef.CameraMode cameraMode = DJICameraSettingsDef.CameraMode.ShootPhoto;
-
-        final DJICamera camera = FPVDemoApplication.getCameraInstance();
-
-        if (camera != null) {
-
-            DJICameraSettingsDef.CameraShootPhotoMode photoMode = DJICameraSettingsDef.CameraShootPhotoMode.Single; // Set the camera capture mode as Single mode
-            camera.startShootPhoto(photoMode, new DJICommonCallbacks.DJICompletionCallback() {
-
-                @Override
-                public void onResult(DJIError error) {
-                    if (error == null) {
-                        showToast("take photo: success");
-
-                    } else {
-                        showToast(error.getDescription());
-                    }
-                }
-
-            });
-        }
-    }
-
-*/
     private void startRecord(){
-        recordbit=1;
-        controla=0.0028;
-        controlb=0.003;
+
+
+
         DJICameraSettingsDef.CameraMode cameraMode = DJICameraSettingsDef.CameraMode.RecordVideo;
         final DJICamera camera = FPVDemoApplication.getCameraInstance();
         if (camera != null) {
@@ -888,8 +695,12 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
                     if (error == null) {
 
                         showToast("Record video: success");
+                        controla=0.0028;
+                        controlb=0.003;
+                        recordbit=1;
+
                     }else {
-                        showToast(error.getDescription());
+                        showToast("Error: "+error.getDescription());
                     }
                 }
             });
@@ -899,9 +710,12 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
 
     private void stopRecord(){
 
-        recordbit=0;
         controla=0.0;
         controlb=0.0;
+        try_once=0;
+        mHandler.removeCallbacksAndMessages(null);
+        handeler_flag=0;
+        recordbit=0;
 
         DJICamera camera = FPVDemoApplication.getCameraInstance();
         if (camera != null) {
@@ -914,7 +728,7 @@ public class MainActivity extends Activity implements SurfaceTextureListener,OnC
                     if(error == null) {
                         showToast("Stop recording: success");
                     }else {
-                        showToast(error.getDescription());
+                        showToast("Error: "+error.getDescription());
                     }
                 }
             });

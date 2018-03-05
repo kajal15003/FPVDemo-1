@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\dJISDKLIB\src\main\shaders"/></dataSet><dataSet config="debug"><source path="E:\@STUDIES\B-tech\ThirdYear\2ndSemester\BTP\Android-FPVDemo\FPVDemo\dJISDKLIB\src\debug\shaders"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\dJISDKLIB\src\main\shaders"/></dataSet><dataSet config="debug"><source path="E:\@STUDIES\B-tech\ForthYear\Mid\FPVDemo\dJISDKLIB\src\debug\shaders"/></dataSet></merger>
