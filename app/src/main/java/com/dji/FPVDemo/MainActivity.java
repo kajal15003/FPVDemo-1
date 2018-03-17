@@ -1,27 +1,29 @@
-
 package com.dji.FPVDemo;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.SurfaceTexture;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.util.Base64;
-import android.util.Log;
 import android.view.TextureView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
+
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -30,9 +32,14 @@ import org.opencv.android.Utils;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 import org.opencv.imgproc.Imgproc;
+
 import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.nio.ByteBuffer;
+import java.util.Date;
 import java.util.Vector;
+
 import dji.common.camera.CameraSystemState;
 import dji.common.camera.DJICameraSettingsDef;
 import dji.common.error.DJIError;
@@ -46,13 +53,22 @@ import dji.common.util.DJICommonCallbacks;
 import dji.sdk.base.DJIBaseProduct;
 import dji.sdk.camera.DJICamera;
 import dji.sdk.codec.DJICodecManager;
+
 import static com.dji.FPVDemo.FPVDemoApplication.getProductInstance;
 
+/**
+ * Created by KunalSaini on 05-Mar-18.
+ */
 
-public class MainActivity extends Activity implements TextureView.SurfaceTextureListener/*,View.OnClickListener*/ {
+public class MainActivity extends Activity implements TextureView.SurfaceTextureListener,View.OnClickListener {
 
 
-    public static final String urlUpload = "http://192.168.1.187:8000/images";
+    //old way of sending commands ie without looper
+    // send images and run model but don't return results
+    // include emergency exit ie close button and set timeout buttons
+    // this is the test application and don't contain the part after re-id ie follow the particular person
+    // this don't contain file writing options
+    public static final String urlUpload = "http://192.168.1.187:8000/images_check";
     public static final String urlUpload1 = "http://192.168.28.124:8000/detect";
     public static final String imageList = "file";
     public static final String imageNameList = "name";
@@ -79,6 +95,23 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
     TextView hello;
     TextView hello1;
     TextView hello2;
+
+    ////////////////////////////
+    EditText detect_timeout,reid_timeout;
+    int detectt,reidt;
+    Button mCancel,mTimeout;
+    ////////////////////////////
+
+    ///////////////////
+    JSONArray jsonArray_file;
+    JSONArray jsonArray_name_file;
+    JSONObject jsonObject_file;
+    ///////////////////
+
+    //////
+    FileOutputStream fout1=null;
+    /////
+
     int response_position;
     int response_index;
     Bitmap bmp;
@@ -87,7 +120,7 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
     protected DJICodecManager mCodecManager = null;
     int recordbit=0;
     protected TextureView mVideoSurface = null;
-   // private Button mCancel;
+    // private Button mCancel;
     private ToggleButton mRecordBtn;
     int flag=-1;
     int try_once=0;
@@ -210,6 +243,22 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
     private void initUI() {
 
         mHandler=new Handler();
+
+        //////////////////////////////
+        detectt=10000;
+        reidt=15000;
+        detect_timeout=(EditText)findViewById(R.id.detect_timeout);
+        reid_timeout=(EditText)findViewById(R.id.reid_timeout);
+        mCancel = (Button) findViewById(R.id.btn_cancel);
+        mTimeout= (Button) findViewById(R.id.btn_timeout);
+        mCancel.setOnClickListener(this);
+        mTimeout.setOnClickListener(this);
+        /////////////////////////////
+        ///////////////////////////////
+        jsonArray_file = new JSONArray();
+        jsonArray_name_file = new JSONArray();
+        jsonObject_file= new JSONObject();
+        /////////////////////////////
         mVideoSurface = (TextureView)findViewById(R.id.video_previewer_surface);
         hello=(TextView)findViewById(R.id.kunal);   //result from KCF Tracker
         hello1=(TextView)findViewById(R.id.kunal1); // velocity in x and y
@@ -217,14 +266,27 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
         result=(ImageView)findViewById(R.id.result);
 
         mRecordBtn = (ToggleButton) findViewById(R.id.btn_record);
-       // mCancel = (Button) findViewById(R.id.btn_cancel);
-
+        mCancel = (Button) findViewById(R.id.btn_cancel);
+        mTimeout= (Button) findViewById(R.id.btn_timeout);
         if (null != mVideoSurface) {
             mVideoSurface.setSurfaceTextureListener(this);
         }
 
-       //mRecordBtn.setOnClickListener(this);
-        // mCancel.setOnClickListener(this);
+
+
+        //////////////////
+        String filename="Track_Reid";
+        if (isExternalStorageAvailable()) {
+
+            File folder = getPrivateStorageDir(filename);
+            File file1 = new File(folder, "Track_Reid_Info.txt");
+            try {
+                fout1 = new FileOutputStream(file1, false);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        /////////////////
 
         mRecordBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -280,6 +342,26 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
 
     }
 
+    ///////////////////////////////////////////
+    private static boolean isExternalStorageAvailable() {
+        String extStorageState = android.os.Environment.getExternalStorageState();
+        if (android.os.Environment.MEDIA_MOUNTED.equals(extStorageState)) {
+            return true;
+        }
+        return false;
+    }
+
+    public File getPrivateStorageDir(String albumName) {
+        File file= new File(getApplicationContext().getExternalFilesDir(
+                Environment.DIRECTORY_DOCUMENTS), albumName);
+        if (!file.mkdirs()) {
+
+        }
+        return file;
+    }
+    ///////////////////////////////////////
+
+
     @Override
     public boolean onSurfaceTextureDestroyed(SurfaceTexture surface) {
 
@@ -297,13 +379,13 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
         if(diff<=100)
             return 1;
         else if(diff>100 && diff<=200)
-            return 2;
+            return 1;
         else if(diff>200 && diff<=250)
-            return 3;
+            return 1;
         else if(diff>250 && diff<=300)
-            return 4;
+            return 1;
         else
-            return 5;
+            return 1;
 
     }
 
@@ -314,13 +396,13 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
         if(diff<=100)
             return 1;
         else if(diff>100 && diff<=200)
-            return 2;
+            return 1;
         else if(diff>200 && diff<=250)
-            return 3;
+            return 1;
         else if(diff>250 && diff<=300)
-            return 4;
+            return 1;
         else
-            return 5;
+            return 1;
     }
 
 
@@ -390,7 +472,7 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
             }
         });
 
-        jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(20000, 0,(float)2.0));
+        jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(detectt, 0,(float)2.0));
         Volley.newRequestQueue(this).add(jsonObjectRequest);
 
 
@@ -411,7 +493,6 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
             tmp=new Mat(bmp.getHeight(),bmp.getWidth(), CvType.CV_8UC4);
             tmp.put(0,0,array);
             Imgproc.cvtColor(tmp,tmp, Imgproc.COLOR_RGBA2RGB);
-
             if(count==-1)
             {
 
@@ -450,6 +531,20 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
                     hello2.setText("scale2: " + scale_x + " " + scale_y);
                     final float af = (float) a;
                     final float bf = (float) b;
+
+                    ///////////////////////////
+                    try {
+                        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+                        bm.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
+                        byte[] imageBytes = byteArrayOutputStream.toByteArray();
+                        String encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
+                        jsonArray_name_file.put(recordbit+","+s+","+scale_x+","+scale_y+","+a+","+b);
+                        jsonArray_file.put(encodedImage);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    //////////////////////////////
+
                     if(handeler_flag==0) {
                         handeler_flag=1;
 
@@ -509,6 +604,19 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
                 final float af = (float) a;
                 final float bf = (float) b;
 
+                ///////////////////////////
+                try {
+                    ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+                    bm.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
+                    byte[] imageBytes = byteArrayOutputStream.toByteArray();
+                    String encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
+                    jsonArray_name_file.put(recordbit+","+s+","+scale_x+","+scale_y+","+a+","+b);
+                    jsonArray_file.put(encodedImage);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                //////////////////////////////
+
                 if(handeler_flag==0) {
                     handeler_flag=1;
                     mHandler.post(new Runnable() {
@@ -542,11 +650,12 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
                     encodedImageList.add(encodedImage);
                     encodedImageNameList.add(s);
                     count_images++;
-                    //Log.d("CountMain","Counter Image: "+count_images);
+
                 }
                 else if (count_images == 16)
                 {
-                    //Log.d("CountMain","Counter Image: "+count_images);
+
+
                     JSONArray jsonArray = new JSONArray();
                     JSONArray jsonArray_name = new JSONArray();
                     JSONObject jsonObject = new JSONObject();
@@ -564,18 +673,22 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
                     } catch (JSONException e) {
                         showToast("JSONObject Error");
                     }
+                    final long lStartTime = new Date().getTime();
                     JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, urlUpload, jsonObject,
                             new Response.Listener<JSONObject>() {
                                 @Override
                                 public void onResponse(JSONObject jsonObject) {
 
                                     try {
-                                        showToast("Server Responded");
+
                                         response_position = (int) jsonObject.get("id");
                                         response_index=(int) jsonObject.get("index");
                                         handeler_flag=0;
                                         mHandler.removeCallbacksAndMessages(null);
                                         count = -1;
+                                        long lEndTime = new Date().getTime();
+                                        long difference = lEndTime - lStartTime;
+                                        Toast.makeText(getApplicationContext(),"Server Responded in: "+difference+" msec",Toast.LENGTH_LONG).show();
                                         encodedImageList.clear();
                                         encodedImageNameList.clear();
                                     } catch (JSONException e) {
@@ -593,7 +706,7 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
                         }
                     });
 
-                    jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(60000, 1,(float)5.0));
+                    jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(reidt, 0,(float)2.0));
                     Volley.newRequestQueue(this).add(jsonObjectRequest);
 
 
@@ -642,7 +755,7 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
                 }
 
             }
-
+            recordbit++;
         }
 
     }
@@ -654,35 +767,52 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
             }
         });
     }
-
-   /* @Override
+    ////////////////////////////////////////////////////////
+    @Override
     public void onClick(View v) {
 
         switch (v.getId()) {
-            //useless
+
             case R.id.btn_cancel:{
 
-                mHandler.removeCallbacksAndMessages(null);
-                recordbit=0;
                 controla=0.0;
-                handeler_flag=0;
-                try_once=0;
                 controlb=0.0;
+                try_once=0;
+                recordbit=0;
+                mHandler.removeCallbacksAndMessages(null);
+                handeler_flag=0;
+
                 showToast("Stop!!");
                 break;
+            }
+
+            case R.id.btn_timeout:{
+
+                String dts=detect_timeout.getText().toString();
+                String rts=reid_timeout.getText().toString();
+                if(!dts.matches("")) {
+                    detectt = Integer.parseInt(dts);
+                }if(!rts.matches("")) {
+                    reidt = Integer.parseInt(rts);
+                }
+
+                showToast("Detect Timeout: "+detectt+" Reid Timeout: "+reidt);
+
             }
 
             default:
                 break;
         }
-    }*/
+    }
 
-
+//////////////////////////////////////////////////////////////////////////
 
 
     private void startRecord(){
 
-
+        controla=0.0028;
+        controlb=0.003;
+        recordbit=1;
 
         DJICameraSettingsDef.CameraMode cameraMode = DJICameraSettingsDef.CameraMode.RecordVideo;
         final DJICamera camera = FPVDemoApplication.getCameraInstance();
@@ -695,9 +825,7 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
                     if (error == null) {
 
                         showToast("Record video: success");
-                        controla=0.0028;
-                        controlb=0.003;
-                        recordbit=1;
+
 
                     }else {
                         showToast("Error: "+error.getDescription());
@@ -713,9 +841,22 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
         controla=0.0;
         controlb=0.0;
         try_once=0;
+        recordbit=0;
         mHandler.removeCallbacksAndMessages(null);
         handeler_flag=0;
-        recordbit=0;
+
+
+        ////////////////////
+        try {
+            jsonObject_file.put("Name", jsonArray_name_file);
+            jsonObject_file.put("Image", jsonArray_file);
+            fout1.write(jsonObject_file.toString().getBytes());
+            fout1.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        ////////////////////
+
 
         DJICamera camera = FPVDemoApplication.getCameraInstance();
         if (camera != null) {
@@ -727,6 +868,8 @@ public class MainActivity extends Activity implements TextureView.SurfaceTexture
                 {
                     if(error == null) {
                         showToast("Stop recording: success");
+
+
                     }else {
                         showToast("Error: "+error.getDescription());
                     }

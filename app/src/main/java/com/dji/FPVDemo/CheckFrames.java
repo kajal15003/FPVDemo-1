@@ -7,7 +7,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Base64;
 import android.view.TextureView;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -54,9 +57,14 @@ import static com.dji.FPVDemo.FPVDemoApplication.getProductInstance;
  * Created by KunalSaini on 05-Mar-18.
  */
 
-public class CheckFrames extends Activity implements TextureView.SurfaceTextureListener {
+public class CheckFrames extends Activity implements TextureView.SurfaceTextureListener,View.OnClickListener {
 
 
+    //old way of sending commands ie without looper
+    // send images and run model but don't return results
+    // include emergency exit ie close button and set timeout buttons
+    // this is the test application and don't contain the part after re-id ie follow the particular person
+    // this don't contain file writing options
     public static final String urlUpload = "http://192.168.1.187:8000/images_check";
     public static final String urlUpload1 = "http://192.168.28.124:8000/detect";
     public static final String imageList = "file";
@@ -84,6 +92,16 @@ public class CheckFrames extends Activity implements TextureView.SurfaceTextureL
     TextView hello;
     TextView hello1;
     TextView hello2;
+
+    ////////////////////////////
+    EditText detect_timeout,reid_timeout;
+    int detectt,reidt;
+    Button mCancel,mTimeout;
+    ////////////////////////////
+
+    ///////////
+    int count_frames=0;
+    //////////
     int response_position;
     int response_index;
     Bitmap bmp;
@@ -215,6 +233,18 @@ public class CheckFrames extends Activity implements TextureView.SurfaceTextureL
     private void initUI() {
 
         mHandler=new Handler();
+
+        //////////////////////////////
+        detectt=10000;
+        reidt=15000;
+        detect_timeout=(EditText)findViewById(R.id.detect_timeout);
+        reid_timeout=(EditText)findViewById(R.id.reid_timeout);
+        mCancel = (Button) findViewById(R.id.btn_cancel);
+        mTimeout= (Button) findViewById(R.id.btn_timeout);
+        mCancel.setOnClickListener(this);
+        mTimeout.setOnClickListener(this);
+        /////////////////////////////
+
         mVideoSurface = (TextureView)findViewById(R.id.video_previewer_surface);
         hello=(TextView)findViewById(R.id.kunal);   //result from KCF Tracker
         hello1=(TextView)findViewById(R.id.kunal1); // velocity in x and y
@@ -222,14 +252,14 @@ public class CheckFrames extends Activity implements TextureView.SurfaceTextureL
         result=(ImageView)findViewById(R.id.result);
 
         mRecordBtn = (ToggleButton) findViewById(R.id.btn_record);
-        // mCancel = (Button) findViewById(R.id.btn_cancel);
-
+        mCancel = (Button) findViewById(R.id.btn_cancel);
+        mTimeout= (Button) findViewById(R.id.btn_timeout);
         if (null != mVideoSurface) {
             mVideoSurface.setSurfaceTextureListener(this);
         }
 
-        //mRecordBtn.setOnClickListener(this);
-        // mCancel.setOnClickListener(this);
+        mRecordBtn.setOnClickListener(this);
+
 
         mRecordBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -395,7 +425,7 @@ public class CheckFrames extends Activity implements TextureView.SurfaceTextureL
             }
         });
 
-        jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(2500, 0,(float)2.0));
+        jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(detectt, 0,(float)2.0));
         Volley.newRequestQueue(this).add(jsonObjectRequest);
 
 
@@ -406,7 +436,7 @@ public class CheckFrames extends Activity implements TextureView.SurfaceTextureL
 
     @Override
     public void onSurfaceTextureUpdated(SurfaceTexture surface) {
-
+        count_frames++;
         if(recordbit!=0) {
             bmp = mVideoSurface.getBitmap();
             int bytes = bmp.getByteCount();
@@ -533,7 +563,7 @@ public class CheckFrames extends Activity implements TextureView.SurfaceTextureL
                         }
                     });
 
-                    jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(5000, 0,(float)2.0));
+                    jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(reidt, 0,(float)2.0));
                     Volley.newRequestQueue(this).add(jsonObjectRequest);
 
 
@@ -582,7 +612,7 @@ public class CheckFrames extends Activity implements TextureView.SurfaceTextureL
                 }
 
             }
-
+            recordbit++;
         }
 
     }
@@ -594,30 +624,45 @@ public class CheckFrames extends Activity implements TextureView.SurfaceTextureL
             }
         });
     }
-
-   /* @Override
+    ////////////////////////////////////////////////////////
+    @Override
     public void onClick(View v) {
 
         switch (v.getId()) {
             //useless
             case R.id.btn_cancel:{
 
-                mHandler.removeCallbacksAndMessages(null);
-                recordbit=0;
                 controla=0.0;
-                handeler_flag=0;
-                try_once=0;
                 controlb=0.0;
+                try_once=0;
+                recordbit=0;
+                mHandler.removeCallbacksAndMessages(null);
+                handeler_flag=0;
+
                 showToast("Stop!!");
                 break;
+            }
+
+            case R.id.btn_timeout:{
+
+                String dts=detect_timeout.getText().toString();
+                String rts=reid_timeout.getText().toString();
+                if(!dts.matches("")) {
+                    detectt = Integer.parseInt(dts);
+                }if(!rts.matches("")) {
+                    reidt = Integer.parseInt(rts);
+                }
+
+                showToast("Detect Timeout: "+detectt+" Reid Timeout: "+reidt);
+
             }
 
             default:
                 break;
         }
-    }*/
+    }
 
-
+//////////////////////////////////////////////////////////////////////////
 
 
     private void startRecord(){
@@ -655,7 +700,9 @@ public class CheckFrames extends Activity implements TextureView.SurfaceTextureL
         try_once=0;
         mHandler.removeCallbacksAndMessages(null);
         handeler_flag=0;
+        showToast("Start: "+recordbit);
         recordbit=0;
+
 
         DJICamera camera = FPVDemoApplication.getCameraInstance();
         if (camera != null) {
@@ -666,7 +713,8 @@ public class CheckFrames extends Activity implements TextureView.SurfaceTextureL
                 public void onResult(DJIError error)
                 {
                     if(error == null) {
-                        showToast("Stop recording: success");
+                        showToast("Stop recording: success: "+count_frames);
+
                     }else {
                         showToast("Error: "+error.getDescription());
                     }

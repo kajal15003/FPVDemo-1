@@ -49,6 +49,27 @@
         android:layout_marginBottom="5dp"
         />
 
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text=""
+        android:gravity="center"
+        android:id="@+id/detect_timeout"
+        android:hint="Detect Timeout"
+        />
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text=""
+        android:gravity="center"
+        android:id="@+id/reid_timeout"
+        android:hint="Reid Timeout"
+        />
+
+
     <TextureView
         android:id="@+id/video_previewer_surface"
         android:layout_width="match_parent"
@@ -77,7 +98,7 @@
              android:textSize="12sp"
              android:checked="false" />
 
-      <!--   <Button
+         <Button
         android:id="@+id/btn_cancel"
         android:layout_width="0dp"
         android:layout_weight="1"
@@ -85,7 +106,17 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:text="Close"
-        android:textSize="12sp"/>-->
+        android:textSize="12sp"/>
+
+         <Button
+             android:id="@+id/btn_timeout"
+             android:layout_width="0dp"
+             android:layout_weight="1"
+             android:focusable="false"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center_vertical"
+             android:text="Set Timeout"
+             android:textSize="12sp"/>
 
      </LinearLayout>
 

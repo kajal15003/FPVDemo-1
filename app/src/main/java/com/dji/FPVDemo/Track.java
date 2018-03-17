@@ -9,7 +9,10 @@ import android.os.Handler;
 import android.util.Base64;
 import android.util.Log;
 import android.view.TextureView;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -60,7 +63,7 @@ import java.io.IOException;
  * Created by KunalSaini on 05-Mar-18.
  */
 
-public class Track extends Activity implements TextureView.SurfaceTextureListener/*,View.OnClickListener*/ {
+public class Track extends Activity implements TextureView.SurfaceTextureListener,View.OnClickListener {
 
 
 
@@ -93,9 +96,21 @@ public class Track extends Activity implements TextureView.SurfaceTextureListene
     int flag=-1;
     int try_once=0;
     int handeler_flag=0;
+
+    ////////////////////////////
+    EditText detect_timeout,reid_timeout;
+    int detectt,reidt;
+    Button mCancel,mTimeout;
+    ////////////////////////////
+
+    ///////////////////
+    JSONArray jsonArray;
+    JSONArray jsonArray_name;
+    JSONObject jsonObject;
+    ///////////////////
+
     //////
     FileOutputStream fout1=null;
-    FileOutputStream fout2=null;
     /////
 
     static{
@@ -219,7 +234,21 @@ public class Track extends Activity implements TextureView.SurfaceTextureListene
         result=(ImageView)findViewById(R.id.result);
 
         mRecordBtn = (ToggleButton) findViewById(R.id.btn_record);
-
+        //////////////////////////////
+        detectt=10000;
+        reidt=15000;
+        detect_timeout=(EditText)findViewById(R.id.detect_timeout);
+        reid_timeout=(EditText)findViewById(R.id.reid_timeout);
+        mCancel = (Button) findViewById(R.id.btn_cancel);
+        mTimeout= (Button) findViewById(R.id.btn_timeout);
+        mCancel.setOnClickListener(this);
+        mTimeout.setOnClickListener(this);
+        ///////////////////////////
+        ///////////////////////////////
+        jsonArray = new JSONArray();
+        jsonArray_name = new JSONArray();
+        jsonObject= new JSONObject();
+        /////////////////////////////
 
         if (null != mVideoSurface) {
             mVideoSurface.setSurfaceTextureListener(this);
@@ -229,47 +258,13 @@ public class Track extends Activity implements TextureView.SurfaceTextureListene
         //////////////////
         String filename="Track";
         if (isExternalStorageAvailable()) {
+
             File folder = getPrivateStorageDir(filename);
-            //commands with the frame
-            File file1 = new File(folder, "TrackInfo1.txt");
-            //commands send to drone
-            File file2 = new File(folder, "TrackInfo2.txt");
-            if (file1.exists()) {
-                try {
-
-                    fout1 = new FileOutputStream(file1, true);
-                    String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
-                    fout1.write((currentDateTimeString + "\n").getBytes());
-
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            } else {
-                try {
-                    fout1 = new FileOutputStream(file1, false);
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                }
-            }
-            if (file2.exists()) {
-                try {
-                    fout2 = new FileOutputStream(file2, true);
-                    String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
-                    fout2.write((currentDateTimeString + "\n").getBytes());
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-            } else {
-                try {
-                    fout2 = new FileOutputStream(file2, false);
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                }
+            File file1 = new File(folder, "TrackInfo.txt");
+            try {
+                fout1 = new FileOutputStream(file1, false);
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
         /////////////////
@@ -345,12 +340,6 @@ public class Track extends Activity implements TextureView.SurfaceTextureListene
 
         }
         return file;
-    }
-
-
-    public boolean fileExistance(String fname){
-        File file = getBaseContext().getFileStreamPath(fname);
-        return file.exists();
     }
     ///////////////////////////////////////
 
@@ -464,7 +453,7 @@ public class Track extends Activity implements TextureView.SurfaceTextureListene
             }
         });
 
-        jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(2500, 0,(float)2.0));
+        jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(detectt, 0,(float)2.0));
         Volley.newRequestQueue(this).add(jsonObjectRequest);
 
 
@@ -486,9 +475,8 @@ public class Track extends Activity implements TextureView.SurfaceTextureListene
             tmp.put(0,0,array);
             Imgproc.cvtColor(tmp,tmp, Imgproc.COLOR_RGBA2RGB);
 
-           if(count>0)
+            if(count>0)
             {
-
 
                 hello.setText((KCFTracker(tmp.getNativeObjAddr(), dumy_array, dumy_array, dumy_array , dumy_array) + ""));
                 String s=hello.getText().toString();
@@ -517,14 +505,16 @@ public class Track extends Activity implements TextureView.SurfaceTextureListene
                 final float bf = (float) b;
                 ///////////////////////////
                 try {
-                    fout1.write((s+","+scale_x+","+scale_y+","+a+","+b+"\n").getBytes());
-                } catch (IOException e) {
+                    ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+                    bm.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
+                    byte[] imageBytes = byteArrayOutputStream.toByteArray();
+                    String encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
+                    jsonArray_name.put(recordbit+","+s+","+scale_x+","+scale_y+","+a+","+b);
+                    jsonArray.put(encodedImage);
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
 
-                final String sf=s;
-                final double scalexf=scale_x;
-                final double scaleyf=scale_y;
                 //////////////////////////////
                 if(handeler_flag==0) {
                     handeler_flag=1;
@@ -542,13 +532,7 @@ public class Track extends Activity implements TextureView.SurfaceTextureListene
                                         }
                                     }
                             );
-                            /////////////////////
-                            try {
-                                fout2.write((sf+","+scalexf+","+scaleyf+","+af+","+bf+"\n").getBytes());
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
-                            //////////////////////
+
                             mHandler.postDelayed(this,100);
                         }
                     });
@@ -597,6 +581,8 @@ public class Track extends Activity implements TextureView.SurfaceTextureListene
 
             }
 
+            recordbit++;
+
         }
 
     }
@@ -610,11 +596,51 @@ public class Track extends Activity implements TextureView.SurfaceTextureListene
     }
 
 
+    ////////////////////////////////////////////////////////
+    @Override
+    public void onClick(View v) {
+
+        switch (v.getId()) {
+
+            case R.id.btn_cancel:{
+
+                controla=0.0;
+                controlb=0.0;
+                try_once=0;
+                recordbit=0;
+                mHandler.removeCallbacksAndMessages(null);
+                handeler_flag=0;
+
+                showToast("Stop!!");
+                break;
+            }
+
+            case R.id.btn_timeout:{
+
+                String dts=detect_timeout.getText().toString();
+                String rts=reid_timeout.getText().toString();
+                if(!dts.matches("")) {
+                    detectt = Integer.parseInt(dts);
+                }if(!rts.matches("")) {
+                    reidt = Integer.parseInt(rts);
+                }
+
+                showToast("Detect Timeout: "+detectt+" Reid Timeout: "+reidt);
+
+            }
+
+            default:
+                break;
+        }
+    }
+
+//////////////////////////////////////////////////////////////////////////
+
+
     private void startRecord(){
         controla=0.0028;
         controlb=0.003;
-        recordbit=1;
-        DJICameraSettingsDef.CameraMode cameraMode = DJICameraSettingsDef.CameraMode.RecordVideo;
+
         final DJICamera camera = FPVDemoApplication.getCameraInstance();
         if (camera != null) {
             camera.startRecordVideo(new DJICommonCallbacks.DJICompletionCallback(){
@@ -623,6 +649,7 @@ public class Track extends Activity implements TextureView.SurfaceTextureListene
                 public void onResult(DJIError error)
                 {
                     if (error == null) {
+                        recordbit=1;
                         showToast("Record video: success");
                     }else {
                         showToast("Error: "+error.getDescription());
@@ -643,9 +670,11 @@ public class Track extends Activity implements TextureView.SurfaceTextureListene
         recordbit=0;
         ////////////////////
         try {
-            fout2.close();
+            jsonObject.put("Name", jsonArray_name);
+            jsonObject.put("Image", jsonArray);
+            fout1.write(jsonObject.toString().getBytes());
             fout1.close();
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         ////////////////////
@@ -659,6 +688,7 @@ public class Track extends Activity implements TextureView.SurfaceTextureListene
                 {
                     if(error == null) {
                         showToast("Stop recording: success");
+
                     }else {
                         showToast("Error: "+error.getDescription());
                     }
