@@ -6,6 +6,7 @@ import android.graphics.SurfaceTexture;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
+import android.os.Looper;
 import android.util.Base64;
 import android.util.Log;
 import android.view.TextureView;
@@ -52,7 +53,29 @@ import dji.common.util.DJICommonCallbacks;
 import dji.sdk.base.DJIBaseProduct;
 import dji.sdk.camera.DJICamera;
 import dji.sdk.codec.DJICodecManager;
-
+import dji.sdk.flightcontroller.DJIFlightController;
+import dji.common.camera.CameraSystemState;
+import dji.common.camera.DJICameraSettingsDef;
+import dji.common.error.DJIError;
+import dji.common.flightcontroller.DJIFlightControllerControlMode;
+import dji.common.flightcontroller.DJIFlightControllerRemoteControllerFlightMode;
+import dji.common.flightcontroller.DJIFlightFailsafeOperation;
+import dji.common.flightcontroller.DJIFlightOrientationMode;
+import dji.common.flightcontroller.DJIIMUState;
+import dji.common.flightcontroller.DJILocationCoordinate2D;
+import dji.common.flightcontroller.DJIVirtualStickFlightControlData;
+import dji.common.flightcontroller.DJIVirtualStickFlightCoordinateSystem;
+import dji.common.flightcontroller.DJIVirtualStickRollPitchControlMode;
+import dji.common.flightcontroller.DJIVirtualStickVerticalControlMode;
+import dji.common.flightcontroller.DJIVirtualStickYawControlMode;
+import dji.common.product.Model;
+import dji.common.util.DJICommonCallbacks;
+import dji.sdk.camera.DJICamera;
+import dji.sdk.camera.DJICamera.CameraReceivedVideoDataCallback;
+import dji.sdk.codec.DJICodecManager;
+import dji.sdk.base.DJIBaseProduct;
+import dji.sdk.flightcontroller.DJIFlightController;
+import dji.sdk.flightcontroller.DJIFlightControllerDelegate;
 import static com.dji.FPVDemo.FPVDemoApplication.getProductInstance;
 import java.util.Date;
 import java.text.DateFormat;
@@ -133,8 +156,257 @@ public class Track extends Activity implements TextureView.SurfaceTextureListene
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        mHandler = new Handler(Looper.getMainLooper());
         initUI();
+
+        DJIFlightController flightController=new DJIFlightController() {
+            @Override
+            public boolean isIntelligentFlightAssistantSupported() {
+                return false;
+            }
+
+            @Override
+            public boolean isLandingGearMovable() {
+                return false;
+            }
+
+            @Override
+            public boolean isRtkSupported() {
+                return false;
+            }
+
+            @Override
+            public void setFlightFailsafeOperation(DJIFlightFailsafeOperation djiFlightFailsafeOperation, DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
+
+            }
+
+            @Override
+            public void getFlightFailsafeOperation(DJICommonCallbacks.DJICompletionCallbackWith<DJIFlightFailsafeOperation> djiCompletionCallbackWith) {
+
+            }
+
+            @Override
+            public void takeOff(DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
+
+            }
+
+            @Override
+            public void cancelTakeOff(DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
+
+            }
+
+            @Override
+            public void autoLanding(DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
+
+            }
+
+            @Override
+            public void cancelAutoLanding(DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
+
+            }
+
+            @Override
+            public void turnOnMotors(DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
+
+            }
+
+            @Override
+            public void turnOffMotors(DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
+
+            }
+
+            @Override
+            public void goHome(DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
+
+            }
+
+            @Override
+            public void cancelGoHome(DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
+
+            }
+
+            @Override
+            public void setHomeLocation(DJILocationCoordinate2D djiLocationCoordinate2D, DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
+
+            }
+
+            @Override
+            public void getHomeLocation(DJICommonCallbacks.DJICompletionCallbackWith<DJILocationCoordinate2D> djiCompletionCallbackWith) {
+
+            }
+
+            @Override
+            public void setGoHomeAltitude(float v, DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
+
+            }
+
+            @Override
+            public void getGoHomeAltitude(DJICommonCallbacks.DJICompletionCallbackWith<Float> djiCompletionCallbackWith) {
+
+            }
+
+            @Override
+            public boolean isOnboardSDKDeviceAvailable() {
+                return false;
+            }
+
+            @Override
+            public void sendDataToOnboardSDKDevice(byte[] bytes, DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
+
+            }
+
+            @Override
+            public void setLEDsEnabled(boolean b, DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
+
+            }
+
+            @Override
+            public void getLEDsEnabled(DJICommonCallbacks.DJICompletionCallbackWith<Boolean> djiCompletionCallbackWith) {
+
+            }
+
+            @Override
+            public void setFlightOrientationMode(DJIFlightOrientationMode djiFlightOrientationMode, DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
+
+            }
+
+            @Override
+            public void lockCourseUsingCurrentDirection(DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
+
+            }
+
+            @Override
+            public boolean isVirtualStickControlModeAvailable() {
+                return true;
+            }
+
+            @Override
+            public void sendVirtualStickFlightControlData(DJIVirtualStickFlightControlData djiVirtualStickFlightControlData, DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
+
+            }
+
+            @Override
+            public void enableVirtualStickControlMode(DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
+
+            }
+
+            @Override
+            public void disableVirtualStickControlMode(DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
+
+            }
+
+            @Override
+            public void setGoHomeBatteryThreshold(int i, DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
+
+            }
+
+            @Override
+            public void getGoHomeBatteryThreshold(DJICommonCallbacks.DJICompletionCallbackWith<Integer> djiCompletionCallbackWith) {
+
+            }
+
+            @Override
+            public void setLandImmediatelyBatteryThreshold(int i, DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
+
+            }
+
+            @Override
+            public void getLandImmediatelyBatteryThreshold(DJICommonCallbacks.DJICompletionCallbackWith<Integer> djiCompletionCallbackWith) {
+
+            }
+
+            @Override
+            public void setHomeLocationUsingAircraftCurrentLocation(DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
+
+            }
+
+            @Override
+            public void setOnIMUStateChangedCallback(DJIFlightControllerDelegate.FlightControllerIMUStateChangedCallback flightControllerIMUStateChangedCallback) {
+
+            }
+
+            @Override
+            public void startIMUCalibration(DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
+
+            }
+
+            @Override
+            public void startIMUCalibration(int i, DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
+
+            }
+
+            @Override
+            public int getNumberOfIMUs() {
+                return 0;
+            }
+
+            @Override
+            public void setControlMode(DJIFlightControllerControlMode djiFlightControllerControlMode, DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
+
+            }
+
+            @Override
+            public void getControlMode(DJICommonCallbacks.DJICompletionCallbackWith<DJIFlightControllerControlMode> djiCompletionCallbackWith) {
+
+            }
+
+            @Override
+            public void setTripodModeEnabled(Boolean aBoolean, DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
+
+            }
+
+            @Override
+            public void getTripodModeEnabled(DJICommonCallbacks.DJICompletionCallbackWith<Boolean> djiCompletionCallbackWith) {
+
+            }
+
+            @Override
+            public void setAutoQuickSpinEnabled(Boolean aBoolean, DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
+
+            }
+
+            @Override
+            public void getQuickSpinEnabled(DJICommonCallbacks.DJICompletionCallbackWith<Boolean> djiCompletionCallbackWith) {
+
+            }
+
+            @Override
+            public void getMultiSideIMUCalibrationStatus(DJICommonCallbacks.DJICompletionCallbackWith<DJIIMUState> djiCompletionCallbackWith) {
+
+            }
+
+            @Override
+            public void setTerrainFollowModeEnabled(Boolean aBoolean, DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
+
+            }
+
+            @Override
+            public void getTerrainFollowModeEnable(DJICommonCallbacks.DJICompletionCallbackWith<Boolean> djiCompletionCallbackWith) {
+
+            }
+
+            @Override
+            public void confirmLanding(DJICommonCallbacks.DJICompletionCallback djiCompletionCallback) {
+
+            }
+
+            @Override
+            public void isLandingConfirmationNeeded(DJICommonCallbacks.DJICompletionCallbackWith<Boolean> djiCompletionCallbackWith) {
+
+            }
+
+            @Override
+            public void getRemoteControllerFlightModeMappingWithCompletion(DJICommonCallbacks.DJICompletionCallbackWith<DJIFlightControllerRemoteControllerFlightMode[]> djiCompletionCallbackWith) {
+
+            }
+        };
+
+        FPVDemoApplication.getAircraftInstance().getFlightController().enableVirtualStickControlMode(new DJICommonCallbacks.DJICompletionCallback() {
+            @Override
+            public void onResult(DJIError djiError) {
+
+            }
+        });
 
         FPVDemoApplication.getAircraftInstance().getFlightController().enableVirtualStickControlMode(new DJICommonCallbacks.DJICompletionCallback() {
             @Override
@@ -226,7 +498,7 @@ public class Track extends Activity implements TextureView.SurfaceTextureListene
 
     private void initUI() {
 
-        mHandler=new Handler();
+        //mHandler=new Handler();
         mVideoSurface = (TextureView)findViewById(R.id.video_previewer_surface);
         hello=(TextView)findViewById(R.id.kunal);   //result from KCF Tracker
         hello1=(TextView)findViewById(R.id.kunal1); // velocity in x and y
@@ -360,13 +632,13 @@ public class Track extends Activity implements TextureView.SurfaceTextureListene
         if(diff<=100)
             return 1;
         else if(diff>100 && diff<=200)
-            return 1.5;
-        else if(diff>200 && diff<=250)
             return 2;
-        else if(diff>250 && diff<=300)
-            return 2.5;
-        else
+        else if(diff>200 && diff<=250)
             return 3;
+        else if(diff>250 && diff<=300)
+            return 4;
+        else
+            return 5;
 
     }
 
@@ -377,13 +649,13 @@ public class Track extends Activity implements TextureView.SurfaceTextureListene
         if(diff<=100)
             return 1;
         else if(diff>100 && diff<=200)
-            return 1.5;
-        else if(diff>200 && diff<=250)
             return 2;
-        else if(diff>250 && diff<=300)
-            return 2.5;
-        else
+        else if(diff>200 && diff<=250)
             return 3;
+        else if(diff>250 && diff<=300)
+            return 4;
+        else
+            return 5;
     }
 
 
@@ -425,7 +697,6 @@ public class Track extends Activity implements TextureView.SurfaceTextureListene
                                 for(int i=0;i<x.length();i++)
                                 {
                                     x_array[i]=((Double)x.get(i)).floatValue();
-
                                     y_array[i]=((Double)y.get(i)).floatValue();
                                     w_array[i]=((Double)w.get(i)).floatValue();
                                     h_array[i]=((Double)h.get(i)).floatValue();
@@ -503,6 +774,9 @@ public class Track extends Activity implements TextureView.SurfaceTextureListene
                 hello2.setText("scale: " + scale_x + " " + scale_y);
                 final float af = (float) a;
                 final float bf = (float) b;
+                final String sf=s;
+                final double scale_xf=scale_x;
+                final double scale_yf=scale_y;
                 ///////////////////////////
                 try {
                     ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
@@ -516,27 +790,33 @@ public class Track extends Activity implements TextureView.SurfaceTextureListene
                 }
 
                 //////////////////////////////
-                if(handeler_flag==0) {
-                    handeler_flag=1;
-                    mHandler.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            FPVDemoApplication.getAircraftInstance().
-                                    getFlightController().sendVirtualStickFlightControlData(
-                                    new DJIVirtualStickFlightControlData(
-                                            af, bf, 0, 0
-                                    ), new DJICommonCallbacks.DJICompletionCallback() {
-                                        @Override
-                                        public void onResult(DJIError djiError) {
+                //if(handeler_flag==0) {
+                //    handeler_flag=1;
+                mHandler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        FPVDemoApplication.getAircraftInstance().
+                                getFlightController().sendVirtualStickFlightControlData(
+                                new DJIVirtualStickFlightControlData(
+                                        af,bf, 0, 0
+                                ), new DJICommonCallbacks.DJICompletionCallback() {
+                                    @Override
+                                    public void onResult(DJIError djiError) {
 
-                                        }
                                     }
-                            );
+                                }
+                        );
 
-                            mHandler.postDelayed(this,100);
-                        }
-                    });
-                }
+                        /*try {
+                            jsonArray_name.put(recordbit+","+sf+","+scale_xf+","+scale_yf+","+af+","+bf);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }*/
+
+                    }
+                },100);
+
+                //}
 
 
                 bm = Bitmap.createBitmap(tmp.cols(), tmp.rows(), Bitmap.Config.ARGB_8888);
@@ -669,14 +949,14 @@ public class Track extends Activity implements TextureView.SurfaceTextureListene
         handeler_flag=0;
         recordbit=0;
         ////////////////////
-        try {
+        /*try {
             jsonObject.put("Name", jsonArray_name);
             jsonObject.put("Image", jsonArray);
             fout1.write(jsonObject.toString().getBytes());
             fout1.close();
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        }*/
         ////////////////////
         DJICamera camera = FPVDemoApplication.getCameraInstance();
         if (camera != null) {
@@ -688,7 +968,14 @@ public class Track extends Activity implements TextureView.SurfaceTextureListene
                 {
                     if(error == null) {
                         showToast("Stop recording: success");
-
+                        try {
+                            jsonObject.put("Name", jsonArray_name);
+                            jsonObject.put("Image", jsonArray);
+                            fout1.write(jsonObject.toString().getBytes());
+                            fout1.close();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                     }else {
                         showToast("Error: "+error.getDescription());
                     }

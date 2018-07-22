@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: E:\\@STUDIES\\B-tech\\ForthYear\\Mid\\FPVDemo\\openCVLibrary2411\\src\\main\\aidl\\org\\opencv\\engine\\OpenCVEngineInterface.aidl
+ * Original file: /media/kunal/EC409F3F409F0F86/@STUDIES/B-tech/ForthYear/Mid/FPVDemo/openCVLibrary2411/src/main/aidl/org/opencv/engine/OpenCVEngineInterface.aidl
  */
 package org.opencv.engine;
 /**

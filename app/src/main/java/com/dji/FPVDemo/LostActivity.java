@@ -335,9 +335,9 @@ public class LostActivity extends Activity implements SurfaceTextureListener,OnC
 
     public void where_to_move()
     {
-        // TODO: testing done only the sigh may change
-        // xx pitch  ^
-        // yy roll   <- ->
+
+        // xx roll  ^
+        // yy pitch   <- ->
 
         double sx=(stuckx+stuckw)/2;
         double sy=(stucky+stuckh)/2;
@@ -345,30 +345,30 @@ public class LostActivity extends Activity implements SurfaceTextureListener,OnC
         if(sx<=240 && sy<=226)
         {
             xx=2;
-            yy=2;
+            yy=-2;
         }
         else if(sx>=480 && sy<=226)
         {
             xx=2;
-            yy=-2;
+            yy=2;
         }
         else if(sx<=240 && sy>=452)
         {
             xx=-2;
-            yy=2;
+            yy=-2;
         }
         else if(sx>=480 && sy>=452)
         {
             xx=-2;
-            yy=-2;
+            yy=2;
         }
         else if(sx>=480)
         {
-            yy=-2;
+            yy=2;
         }
         else if(sx<=240)
         {
-            yy=2;
+            yy=-2;
         }
         else if(sy<=339)
         {
@@ -386,7 +386,7 @@ public class LostActivity extends Activity implements SurfaceTextureListener,OnC
         FPVDemoApplication.getAircraftInstance().
                 getFlightController().sendVirtualStickFlightControlData(
                 new DJIVirtualStickFlightControlData(
-                        xx, yy, 0, 0
+                        yy, xx, 0, 0
                 ), new DJICommonCallbacks.DJICompletionCallback() {
                     @Override
                     public void onResult(DJIError djiError) {
@@ -430,12 +430,12 @@ public class LostActivity extends Activity implements SurfaceTextureListener,OnC
                                 //handler removed
                                 mCheckHandler.removeCallbacks(null);
                                 mHandler.removeCallbacksAndMessages(null);
-                                //height increased by 5 once
+                                //height increased by 3 once
                                 showToast("Increase Height");
                                 FPVDemoApplication.getAircraftInstance().
                                         getFlightController().sendVirtualStickFlightControlData(
                                         new DJIVirtualStickFlightControlData(
-                                                0, 0, 0, 5
+                                                0, 0, 0, 3
                                         ), new DJICommonCallbacks.DJICompletionCallback() {
                                             @Override
                                             public void onResult(DJIError djiError) {
@@ -555,9 +555,7 @@ public class LostActivity extends Activity implements SurfaceTextureListener,OnC
             }
         });
 
-        jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(20000,
-                0,
-                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        jsonObjectRequest.setRetryPolicy(new DefaultRetryPolicy(10000, 0, (float)2.0));
         Volley.newRequestQueue(this).add(jsonObjectRequest);
 
 
@@ -611,8 +609,8 @@ public class LostActivity extends Activity implements SurfaceTextureListener,OnC
                     final double b = Float.parseFloat(parts[1]);
                     final double c = Float.parseFloat(parts[2]);
                     final double d = Float.parseFloat(parts[3]);
-                    int scale_x=get_scale_x(c,tmp.rows()/2);
-                    int scale_y=get_scale_y(d,tmp.cols()/2);
+                    double scale_x=get_scale_x(a+c/2,tmp.rows()/2);
+                    double scale_y=get_scale_y(b+d/2,tmp.cols()/2);
                     double a1=scale_x*controla*((a+c/2)-(tmp.cols()/2));
                     double b1=scale_y*controlb*((tmp.rows()/2)-(b+d/2));
                     hello1.setText("velociy2:" + a1 + " " + b1);
@@ -634,10 +632,9 @@ public class LostActivity extends Activity implements SurfaceTextureListener,OnC
                     }
 
 
-                    if(handeler_flag==0) {
-                        handeler_flag=1;
 
-                        mHandler.post(new Runnable() {
+
+                        mHandler.postDelayed(new Runnable() {
                             @Override
                             public void run() {
                                 FPVDemoApplication.getAircraftInstance().
@@ -652,10 +649,10 @@ public class LostActivity extends Activity implements SurfaceTextureListener,OnC
                                         }
                                 );
 
-                                mHandler.postDelayed(this,100);
+
                             }
-                        });
-                    }
+                        },100);
+
                     bm = Bitmap.createBitmap(tmp.cols(), tmp.rows(), Bitmap.Config.ARGB_8888);
                     Utils.matToBitmap(tmp, bm);
                     result.setImageBitmap(bm);
@@ -694,9 +691,8 @@ public class LostActivity extends Activity implements SurfaceTextureListener,OnC
                 final float af = (float) a;
                 final float bf = (float) b;
 
-                if(handeler_flag==0) {
-                    handeler_flag=1;
-                    mHandler.post(new Runnable() {
+
+                    mHandler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
                             FPVDemoApplication.getAircraftInstance().
@@ -711,10 +707,10 @@ public class LostActivity extends Activity implements SurfaceTextureListener,OnC
                                     }
                             );
 
-                            mHandler.postDelayed(this,100);
+
                         }
-                    });
-                }
+                    },100);
+
 
                 if (count_images < 16) {
 
@@ -775,9 +771,8 @@ public class LostActivity extends Activity implements SurfaceTextureListener,OnC
                                         else {
                                             showToast("Its first time for culprit");
                                             saved_index=response_index;
-                                            handeler_flag = 0;
-                                            mHandler.removeCallbacksAndMessages(null);
                                             count = -1;
+                                            mHandler.removeCallbacksAndMessages(null);
                                             encodedImageList.clear();
                                             encodedImageNameList.clear();
                                         }
@@ -790,9 +785,10 @@ public class LostActivity extends Activity implements SurfaceTextureListener,OnC
                         @Override
                         public void onErrorResponse(VolleyError volleyError) {
                             showToast("Volley Error Occurred "+volleyError);
-                            count_images=0;
+
                             encodedImageList.clear();
                             encodedImageNameList.clear();
+                            count_images=0;
                         }
                     });
 
@@ -891,8 +887,8 @@ public class LostActivity extends Activity implements SurfaceTextureListener,OnC
         restart=0;
         controla=0.0028;
         controlb=0.003;
-        recordbit=1;
-        DJICameraSettingsDef.CameraMode cameraMode = DJICameraSettingsDef.CameraMode.RecordVideo;
+
+
         final DJICamera camera = FPVDemoApplication.getCameraInstance();
         if (camera != null) {
             camera.startRecordVideo(new DJICommonCallbacks.DJICompletionCallback(){
@@ -901,7 +897,7 @@ public class LostActivity extends Activity implements SurfaceTextureListener,OnC
                 public void onResult(DJIError error)
                 {
                     if (error == null) {
-
+                        recordbit=1;
                         showToast("Record video: success");
 
                     }else {
